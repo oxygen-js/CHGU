@@ -1,12 +1,12 @@
 N0 = 200
 S0 = 3000
-e = 200 / 10
+precent = 200 / 10
 
 K = int(input("Day = "))
 
 for x in range(K):
-    N0 += e
+    N0 += precent
 
 
 print("shares$ =", N0)
-print("cost$ =", N0 * S0)
+print("cost$ =", N0 * S0, "$")
