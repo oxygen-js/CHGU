@@ -48,34 +48,29 @@ begin
   ear_R_y2 := 220;
   Ellipse(ear_R_x1, ear_R_y1, ear_R_x2, ear_R_y2);
   
+  // Body (Тело)  
+  var body_x1, body_x2, body_y1, body_y2: integer;
+  body_x1 := 280;
+  body_x2 := 365;
+  body_y1 := 210;
+  body_y2 := 360;
+  Ellipse(body_x1, body_y1, body_x2, body_y2);
   
-  // EAR (Ухо П)  
-//  var ear_r_x, ear_r_y: integer;
-//  ear_r_x := 50;
-//  ear_r_y := 50;
-//  Circle(eye_l,eye_l,5);
-//  FloodFill(eye_l,eye_l, clBlue);
+  // Arm_L (Рука Л)  
+  var arm_L_x1, arm_L_x2, arm_L_y1, arm_L_y2: integer;
+  arm_L_x1 := 230;
+  arm_L_x2 := 282;
+  arm_L_y1 := 260;
+  arm_L_y2 := 270;
+  Ellipse(arm_L_x1, arm_L_y1, arm_L_x2, arm_L_y2);
   
-  // BODY (Тело)
-//  var cheb_body_x, cheb_body_y: integer;
-//  cheb_body_x := 100;
-//  cheb_body_y := 150;
-//  Circle(eye_l,eye_l,5);
-//  FloodFill(eye_l,eye_l, clBlue);
+  // Arm_R (Рука П)  
+  var arm_R_x1, arm_R_x2, arm_R_y1, arm_R_y2: integer;
+  arm_R_x1 := 363;
+  arm_R_x2 := 415;
+  arm_R_y1 := 260;
+  arm_R_y2 := 270;
+  Ellipse(arm_R_x1, arm_R_y1, arm_R_x2, arm_R_y2);
   
-  // FOOT (Нога Л)
-//  var foot_l_x, foot_l_y: integer;
-//  foot_l_x := 100;
-//  foot_l_y := 150;
-//  Circle(eye_l,eye_l,5);
-//  FloodFill(eye_l,eye_l, clBlue);
-  
-  
-//  // FOOT (Нога Л)
-//  var foot_r_x, foot_r_y: integer;
-//  foot_r_x := 100;
-//  foot_r_y := 150;
-//  Circle(eye_l,eye_l,5);
-//  FloodFill(eye_l,eye_l, clBlue);
   
 end.
