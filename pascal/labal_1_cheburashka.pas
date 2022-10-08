@@ -10,18 +10,18 @@ begin
   FloodFill(320, 160, clKhaki);
     
   // EYE (Глаз Л)
-  var eye_l_x, eye_l_y: integer;
-  eye_l_x := 300;
-  eye_l_y := 150;
-  Circle(eye_l_x, eye_l_y, 7);
-  FloodFill(eye_l_x, eye_l_y, clBlue);
+  var eye_L_x, eye_L_y: integer;
+  eye_L_x := 300;
+  eye_L_y := 150;
+  Circle(eye_L_x, eye_L_y, 7);
+  FloodFill(eye_L_x, eye_L_y, clBlue);
   
   // EYE (Глаз П)  
-  var eye_r_x, eye_r_y: integer;
-  eye_r_x := 340;
-  eye_r_y := 150;
-  Circle(eye_r_x,eye_r_y, 7);
-  FloodFill(eye_r_x,eye_r_y, clBlue);
+  var eye_R_x, eye_R_y: integer;
+  eye_R_x := 340;
+  eye_R_y := 150;
+  Circle(eye_R_x,eye_R_y, 7);
+  FloodFill(eye_R_x,eye_R_y, clBlue);
   
   // Nose
   var nose_x1, nose_x2, nose_y1, nose_y2: integer;
