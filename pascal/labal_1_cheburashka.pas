@@ -30,7 +30,15 @@ begin
   nose_x2 := 325;
   nose_y1 := 160;
   nose_y2 := 180;
-  Ellipse(nose_x1, nose_y1, nose_x2, nose_y2);
+   (nose_x1, nose_y1, nose_x2, nose_y2);
+  
+  // Mouth
+  var mouth_x1, mouth_x2, mouth_y1, mouth_y2: integer;
+  mouth_x1 := 310;
+  mouth_x2 := 330;
+  mouth_y1 := 190;
+  mouth_y2 := 190;
+  Line(mouth_x1, mouth_y1, mouth_x2, mouth_y2);
     
   // EAR_L (Ухо Л)  
   var ear_L_x1, ear_L_x2, ear_L_y1, ear_L_y2: integer;
@@ -55,6 +63,7 @@ begin
   body_y1 := 210;
   body_y2 := 360;
   Ellipse(body_x1, body_y1, body_x2, body_y2);
+  floodfill(300, 300, clBrown);
   
   // Arm_L (Рука Л)  
   var arm_L_x1, arm_L_x2, arm_L_y1, arm_L_y2: integer;
@@ -74,11 +83,19 @@ begin
   
   // Foot_L (Нога Л)  
   var foot_L_x1, foot_L_x2, foot_L_y1, foot_L_y2: integer;
-  foot_L_x1 := 230;
-  foot_L_x2 := 282;
-  foot_L_y1 := 360;
-  foot_L_y2 := 380; 
+  foot_L_x1 := 258;
+  foot_L_x2 := 306;
+  foot_L_y1 := 345;
+  foot_L_y2 := 365; 
   Ellipse(foot_L_x1, foot_L_y1, foot_L_x2, foot_L_y2);
+  
+  // Foot_L (Нога П)  
+  var foot_R_x1, foot_R_x2, foot_R_y1, foot_R_y2: integer;
+  foot_R_x1 := 340;
+  foot_R_x2 := 388;
+  foot_R_y1 := 345;
+  foot_R_y2 := 365; 
+  Ellipse(foot_R_x1, foot_R_y1, foot_R_x2, foot_R_y2);
   
   // Foot_L (Нога П)  
 //  var foot_R_x1, foot_R_x2, foot_R_y1, foot_R_y2: integer;
