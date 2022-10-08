@@ -72,5 +72,21 @@ begin
   arm_R_y2 := 270;
   Ellipse(arm_R_x1, arm_R_y1, arm_R_x2, arm_R_y2);
   
+  // Foot_L (Нога Л)  
+  var foot_L_x1, foot_L_x2, foot_L_y1, foot_L_y2: integer;
+  foot_L_x1 := 230;
+  foot_L_x2 := 282;
+  foot_L_y1 := 360;
+  foot_L_y2 := 380; 
+  Ellipse(foot_L_x1, foot_L_y1, foot_L_x2, foot_L_y2);
+  
+  // Foot_L (Нога П)  
+//  var foot_R_x1, foot_R_x2, foot_R_y1, foot_R_y2: integer;
+//  foot_R_x1 := 230;
+//  foot_R_x2 := 282;
+//  foot_R_y1 := 260;
+//  foot_R_y2 := 270;
+//  Ellipse(foot_L_x1, foot_L_y1, foot_L_x2, foot_L_y2);
+  
   
 end.
