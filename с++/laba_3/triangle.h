@@ -5,23 +5,17 @@ using namespace std;
 class Triangle
 {
 private:
-  int a, b, c;
+  int A, B, C;
 
 public:
-  void set_a(int side_a)
-  {
-    a = side_a;
-  }
+  int get_A() { return A; }
+  void set_A(int side_A) { A = side_A; }
 
-  void set_b(int side_b)
-  {
-    b = side_b;
-  }
+  int get_B() { return B; }
+  void set_B(int side_B) { B = side_B; }
 
-  void set_c(int side_c)
-  {
-    c = side_c;
-  }
+  int get_C() { return C; }
+  void set_C(int side_C) { C = side_C; }
 
   void edit_side_precent(char side, int precent)
   {
@@ -29,20 +23,50 @@ public:
     switch (side)
     {
     case 'a':
-      value = (a / 100) * precent;
-      a = precent > 0 ? a + value : a - value;
+      value = (A / 100) * precent;
+      A = precent > 0 ? A + value : A - value;
       break;
     case 'b':
-      value = (b / 100) * precent;
-      b = precent > 0 ? b + value : b - value;
+      value = (B / 100) * precent;
+      B = precent > 0 ? B + value : B - value;
       break;
     case 'c':
-      value = (c / 100) * precent;
-      c = precent > 0 ? c + value : c - value;
+      value = (C / 100) * precent;
+      C = precent > 0 ? C + value : C - value;
       break;
     default:
       cout << "Side \"" << side << "\" not found" << endl;
       break;
     }
+  }
+
+  void check_type_triangle()
+  {
+    if (C * C > (A * A + B * B))
+    {
+      cout << "Треугольник тупоугольный.\n";
+    }
+
+    if (C * C == (A * A + B * B))
+    {
+      cout << "Треугольник прямоугольный.\n";
+    }
+
+    if (C * C < (A * A + B * B))
+    {
+      cout << "Треугольник остроугольный.\n";
+    }
+  }
+
+  void middle_line()
+  {
+    int ml_A, ml_B, ml_C;
+    ml_A = A / 2;
+    ml_B = B / 2;
+    ml_C = C / 2;
+
+    cout << "Middle Line A: " << ml_A << endl;
+    cout << "Middle Line B: " << ml_B << endl;
+    cout << "Middle Line C: " << ml_C << endl;
   }
 };

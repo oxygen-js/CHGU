@@ -4,53 +4,47 @@
 using namespace std;
 
 
-int input_value(string side)
+bool check_value(int value)
 {
-  int value;
+  if (value <= 0) {
+    cout << "Ошибка. Значение должно быть > 0.";
+    return false;
+  } 
 
-  do
-  {
-    cout << side; cin >> value;
-    if (value <= 0)
-      cout << "Invalid value. Value maste be > 0.\n";
-  } while (value <= 0);
-
-  return value;
-}
-
-void commands()
-{
-  string commands[] = {
-    "(1) increase/decrease the size of the sides by a specified number of percent;",
-    "(2) calculation of the middle line for any of the sides;",
-    "(3) determination of the type of triangle by the magnitude of the angles (Sharp-angled. Obtuse, Rectangular)",
-    "(4) determination of the value of angles"
-  };
-
-  for (int i = 0; i < int(sizeof(commands) / sizeof(*commands)); i++)
-    cout << commands[i] << endl;
-  
+  return true;
 }
 
 int main()
 {
-  cout << "\t\t\t\t *** Triangle ***" << endl;
+  setlocale(LC_ALL, "RUS");
+  cout << "\t\t\t\t *** Треугольник ***" << endl;
+
+  int side_A, side_B, side_C;
   Triangle triangle;
 
-  triangle.set_a(input_value("A = "));
-  triangle.set_b(input_value("B = "));
-  triangle.set_c(input_value("C = "));
+  cout << "A: "; cin >> side_A;
+  if (check_value(side_A)) {
+    triangle.set_A(side_A);
+  } else {
+    return 1;
+  }
 
-  commands();
+  cout << "B: "; cin >> side_B;
+  if (check_value(side_B)) {
+    triangle.set_A(side_B);
+  } else {
+    return 1;
+  }
+
+  cout << "C: "; cin >> side_C;
+  if (check_value(side_C)) {
+    triangle.set_C(side_C);
+  } else {
+    return 1;
+  }
+
+  triangle.check_type_triangle();
+  triangle.middle_line();
   
   return 0;
 }
-
-
-
-  /** 
-  string command_1 = "(1) increase/decrease the size of the sides by a specified number of percent;";
-  string command_2 = "(2) calculation of the middle line for any of the sides;";
-  string command_3 = "(3) determination of the type of triangle by the magnitude of the angles (Sharp-angled. Obtuse, Rectangular)";
-  string command_4 = "(4) determination of the value of angles";
-  */
