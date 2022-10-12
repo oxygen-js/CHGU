@@ -40,21 +40,29 @@ public:
     }
   }
 
+  bool is_valid()
+  {
+    return A > 0 && B > 0 && C > 0;
+  }
+
   void check_type_triangle()
   {
     if (C * C > (A * A + B * B))
     {
-      cout << "Треугольник тупоугольный.\n";
+      // Треугольник тупоугольный.
+      cout << "The triangle is obtuse.\n";
     }
 
     if (C * C == (A * A + B * B))
     {
-      cout << "Треугольник прямоугольный.\n";
+      // Треугольник прямоугольный.
+      cout << "The triangle is rectangular.\n";
     }
 
     if (C * C < (A * A + B * B))
     {
-      cout << "Треугольник остроугольный.\n";
+      // Треугольник остроугольный.
+      cout << "The triangle is acute-angled.\n";
     }
   }
 
