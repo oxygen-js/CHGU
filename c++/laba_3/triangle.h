@@ -5,70 +5,53 @@ using namespace std;
 class Triangle
 {
 private:
-  int A, B, C;
+  double A, B, C;
 
 public:
-  int get_A() { return A; }
-  void set_A(int side_A) { A = side_A; }
+  double get_A() { return A; }
+  void set_A(double side_A) { A = side_A; }
 
-  int get_B() { return B; }
-  void set_B(int side_B) { B = side_B; }
+  double get_B() { return B; }
+  void set_B(double side_B) { B = side_B; }
 
-  int get_C() { return C; }
-  void set_C(int side_C) { C = side_C; }
-
-  void edit_side_precent(char side, int precent)
-  {
-    int value = 0;
-    switch (side)
-    {
-    case 'a':
-      value = (A / 100) * precent;
-      A = precent > 0 ? A + value : A - value;
-      break;
-    case 'b':
-      value = (B / 100) * precent;
-      B = precent > 0 ? B + value : B - value;
-      break;
-    case 'c':
-      value = (C / 100) * precent;
-      C = precent > 0 ? C + value : C - value;
-      break;
-    default:
-      cout << "Side \"" << side << "\" not found" << endl;
-      break;
-    }
-  }
+  double get_C() { return C; }
+  void set_C(double side_C) { C = side_C; }
 
   bool is_valid()
   {
     return A > 0 && B > 0 && C > 0;
   }
 
-  void check_type_triangle()
+  void edit_side_precent(double precent)
   {
-    if (C * C > (A * A + B * B))
+    double pr_A, pr_B, pr_C;
+    pr_A = (A / 100) * precent;
+    pr_B = (B / 100) * precent;
+    pr_C = (C / 100) * precent;
+
+    if (precent > 0)
     {
-      // Треугольник тупоугольный.
-      cout << "The triangle is obtuse.\n";
+      A += pr_A;
+      B += pr_B;
+      C += pr_C;
+    }
+    else
+    {
+      A -= pr_A;
+      B -= pr_B;
+      C -= pr_C;
     }
 
-    if (C * C == (A * A + B * B))
-    {
-      // Треугольник прямоугольный.
-      cout << "The triangle is rectangular.\n";
-    }
-
-    if (C * C < (A * A + B * B))
-    {
-      // Треугольник остроугольный.
-      cout << "The triangle is acute-angled.\n";
-    }
+    cout << "A: " << A << endl;
+    cout << "B: " << B << endl;
+    cout << "C: " << C << endl;
   }
+
+  void check_type_triangle();
 
   void middle_line()
   {
-    int ml_A, ml_B, ml_C;
+    double ml_A, ml_B, ml_C;
     ml_A = A / 2;
     ml_B = B / 2;
     ml_C = C / 2;
