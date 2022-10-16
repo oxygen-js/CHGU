@@ -14,4 +14,8 @@ for i in arr:
     result += str(i) + " "
 
 print("Sample Output:")
-print(result)
+
+if len(result):
+    print(result)
+else:
+    print("Отсутствует")
