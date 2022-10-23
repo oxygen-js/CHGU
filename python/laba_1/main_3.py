@@ -1,6 +1,3 @@
-from turtle import circle
-
-
 x = float(input("x:"))
 y = float(input("y:"))
 
@@ -25,3 +22,6 @@ if y < 3 * x + 6 and (x - x0) ** 2 + (y - y0) ** 2 > R ** 2:
 
 if y == 3 * x + 6 and (x - x0) ** 2 + (y - y0) ** 2 == R ** 2:
     result = True
+
+
+print(result)
