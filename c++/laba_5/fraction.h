@@ -54,12 +54,12 @@ public:
 
     double area()
     {
-        return 3 / 2 * (a * H);
+        return (3.0 / 2) * (a * H);
     }
 
     double volume()
     {
-        return (1 / 3) * area() * H;
+        return (1.0 / 3) * area() * H;
     }
 
     void prtin_info()
