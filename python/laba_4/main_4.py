@@ -7,49 +7,67 @@ class Game:
         self.command2 = {"name": club_2, "goal": randint(0, 15)}
 
 
-class Table:
-    dict
-    # ВОЗМОЖНО ВСТАВИТЬ НАЗВАНИЯ КОМАНД?
-    # def __init__(self, club, all_game, win, draw, loss):
-        # self.club["name"] = { "name": club["name"], "all_game": all_game, "win": win, "draw": draw, "loss": loss }
-
-
-all_game = int(input("All game: "))
-if all_game > 10:
-    all_game = 10
-
-clubs = ["Спартак", "Локоматив", "ЦСК", "Терек", "Сатурн", "РФК «Ахмат» Грозный",
-         "Динамо", "Торпедо", "Ростов", "Ратор", "Крылья советов"]
+all_games = int(input("All game: "))
+if all_games >= 10:
+    all_games = 9
+clubs_name = ["Спартак", "Локоматив", "ЦСК", "Терек", "Сатурн", "Ахмат", "Динамо", "Торпедо", "Ростов",
+              "Ратор", "Крылья"]
 games = []
 
-cout = 0
-for i in range(all_game):
-    club_1 = choice(clubs)
-    club_2 = choice(clubs)
+for i in range(all_games):
+    club_1 = choice(clubs_name)
+    club_2 = choice(clubs_name)
 
     while club_1 == club_2:
-        club_2 = choice(clubs)
+        club_2 = choice(clubs_name)
 
     game = Game(club_1, club_2)
     games.append(game)
 
-
 for i in games:
     print(f"{i.command1['name']} - {i.command1['goal']}; {i.command2['name']} - {i.command2['goal']}")
 
+print("\n\n")
+table = [
+    {"name": "ЦСК", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Терек", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Сатурн", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Ахмат", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Динамо", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Торпедо", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Ростов", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Ратор", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Крылья", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Спартак", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+    {"name": "Локоматив", "win": 0, "goal": 0, "loss": 0, "draw": 0, "all_games": 0, "points": 0},
+]
 
-#Команда:Всего_игр Побед Ничьих Поражений Всего_очков
-table = Table() 
 for i in games:
-    name_club_1 = i.command1["name"]
-    name_club_2 = i.command2["name"]
-    table[name_club_1] = name_club_1
-    table[name_club_2] = name_club_2
+    club_1 = {}
+    club_2 = {}
+
+    for club in table:
+        if club["name"] == i.command1["name"]:
+            club_1 = club
+        if club["name"] == i.command2["name"]:
+            club_2 = club
+
     if i.command1["goal"] > i.command2["goal"]:
-        table[name_club_1]["win"] = table[name_club_1]["win"] + 1
+        club_1["win"] += 1
+        club_1["points"] += 3
+        club_2["loss"] += 1
     else:
-        table[name_club_2]["win"] = table[name_club_2]["win"] + 1
+        club_2["win"] += 1
+        club_1["loss"] += 1
 
-    
+    if i.command1["goal"] == i.command2["goal"]:
+        club_1["points"] += 1
+    else:
+        club_2["points"] += 1
 
-print(table)
+    club_1["all_games"] += 1
+    club_2["all_games"] += 1
+
+for i in table:
+    if i["all_games"] > 0:
+        print(f"{i['name']}: {i['all_games']}; {i['win']}; {i['draw']}; {i['loss']}; {i['points']};")
