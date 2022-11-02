@@ -6,17 +6,12 @@ using namespace std;
 class Square
 {
 public:
-    double area(double x)
-    {
-        return x * x;
-    }
-};
-
-class Side : public Square
-{
-public:
     double x;
-    Side(double side)
+    Square()
+    {
+        x = 0;
+    }
+    Square(double side)
     {
         x = side;
     }
@@ -29,6 +24,20 @@ public:
     double diagonal()
     {
         return sqrt(x * x * 2);
+    }
+
+    double area()
+    {
+        return x * x;
+    }
+
+    void prtin_info()
+    {
+        cout << "\nSQUARE: " << x << endl;
+        cout << "Area:\t" << area() << endl;
+        cout << "Perimeter:\t" << perimeter() << endl;
+        cout << "Diagonal:\t" << diagonal() << endl;
+        cout << "--------------\n\n";
     }
 };
 
@@ -48,13 +57,17 @@ public:
         return 3 / 2 * (a * H);
     }
 
-    double area(double in_a, double in_H)
+    double volume()
     {
-        return 3 / 2 * (in_a * in_H);
+        return (1 / 3) * area() * H;
     }
 
-    double amount(double in_H, double in_a)
+    void prtin_info()
     {
-        return (H * a) / (4 * sqrt(3));
+        cout << "\nPIRAMIDA: " << H << ", " << a << endl;
+        double area_result = area();
+        cout << "Area:\t" << area_result << endl;
+        cout << "volume:\t" << volume() << endl;
+        cout << "--------------\n\n";
     }
 };
