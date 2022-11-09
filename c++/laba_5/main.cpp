@@ -7,6 +7,9 @@ using namespace std;
 
 int main()
 {
+
+    cout << "\t\t\t\t========== INFO ==========\n\n";
+
     Square square_1 = Square(4);
     square_1.prtin_info();
     Square square_2 = Square(3);
@@ -21,22 +24,27 @@ int main()
 
     for (int i = 1; i < 4; i++)
     {
-        if (squares[i].area() < min_area)
+        int h = squares[i].area();
+        if (h < min_area)
         {
             min_area = squares[i].area();
-            if (i == 3) 
-            {
-                squares[i].prtin_info();
-            }
         }
-        else
+    }
+
+    for (int i = 0; i < 4; i++)
+    {
+        double h = squares[i].area();
+        if (h == min_area)
         {
-            continue;
+            cout << "1) Min S: " << min_area << endl;
+            squares[i].prtin_info();
+            break;
         }
     }
 
     int a, count = 0;
-    cout << "a: "; cin >> a;
+    cout << "a: ";
+    cin >> a;
 
     Piramida pirm_1 = Piramida(1, 10);
     pirm_1.prtin_info();
@@ -54,7 +62,7 @@ int main()
         }
     }
 
-    cout << "Cout piramid > " << a << " = " << count << endl;
-    
+    cout << "2) Piramid`s the height of which > " << a << "h = " << count << endl;
+
     return 0;
 }

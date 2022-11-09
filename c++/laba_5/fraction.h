@@ -64,7 +64,7 @@ public:
 
     void prtin_info()
     {
-        cout << "\nPIRAMIDA: " << H << ", " << a << endl;
+        cout << "\nPIRAMIDA: " << H << "h, " << a << "side" << endl;
         double area_result = area();
         cout << "Area:\t" << area_result << endl;
         cout << "volume:\t" << volume() << endl;
