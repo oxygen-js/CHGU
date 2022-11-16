@@ -1,15 +1,12 @@
-def get_items(item):
-    name = item[0]
-    if (item[1] >= 18):
-        return name
+N = list(map(int, input("N (1 - #14): ").split()))
+result = dict.fromkeys(N, [])
 
-
-people = {
-    "Bob Smith": 16,
-    "Alice Taylor": 19,
-    "Rolf Wilson": 21,
-    "Anna Miller": 17
-}
-adult_names = list(filter(lambda x: x, map(get_items, people.items())))
-
-print(adult_names)
+for i in result:
+    num = int(i)
+    for j in range(num + 1):
+        divider = int(j)
+        if divider == 1 or divider == 0:
+            continue
+        if (num % divider) == 0:
+            result[i] = result[i] + [j]
+    print(i, "-", result[i])
