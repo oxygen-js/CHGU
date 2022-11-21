@@ -5,7 +5,7 @@ class Warrior:
 
     def check_win(self, enemy):
         if self.hp == 0:
-            print(f"Победил - {enemy.name}")
+            print(f"Победил - {enemy.column}")
             exit(0)
 
         if enemy.hp == 0:

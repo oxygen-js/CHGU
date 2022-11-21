@@ -4,15 +4,15 @@ data = []
 
 with open("movies.csv", newline='') as csv_file:
     reader = csv.DictReader(csv_file)
-    keys = reader.fieldnames[:5]
-    data.append(keys)
+    name_columns = reader.fieldnames[:5]
+    data.append(name_columns)
     for row in reader:
         item = []
-        for key in keys:
-            if key == "Жанр":
-                item.append(list(row[key].split(',')))
+        for column in name_columns:
+            if column == "Жанр":
+                item.append(list(row[column].split(',')))
             else:
-                item.append(row[key])
+                item.append(row[column])
         data.append(item)
 
 print(data)
