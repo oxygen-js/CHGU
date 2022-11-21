@@ -12,6 +12,13 @@ def is_digit(string):
             return False
 
 
+def print_table(table):
+    head = "{0:<35}|{1:^6}|{2:^9}|{3:^7}|{4:^8}|{5:^9} |".format(*list(map(lambda x: x.split(',')[0], table[0])))
+    print(head, "\n", "-" * len(head))
+    for i in table[1:]:
+        print("{0:<35}|{1:^6.0f}|{2:>8.2f} |{3:>6} |{4:>7.1f} |{5:>9.1f} |".format(*i))
+
+
 data = []
 with open("movies.csv") as csv_file:
     reader = csv.DictReader(csv_file)
@@ -26,8 +33,4 @@ with open("movies.csv") as csv_file:
                 item.append(row[column])
         data.append(item)
 
-columns = list(map(lambda x: x.split(',')[0], data[0]))
-print("{0:<35}|{1:^6}|{2:^9}|{3:^7}|{4:^8}|{5:^9} |".format(*columns))
-print("-" * len(columns))
-for item in data[1:]:
-    print("{0:<35}|{1:^6.0f}|{2:>8.2f} |{3:>6} |{4:>7.1f} |{5:>9.1f} |".format(*item))
+print_table(data)
