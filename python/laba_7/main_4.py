@@ -1,4 +1,5 @@
 import csv
+from operator import itemgetter
 from dataclasses import dataclass
 
 
@@ -30,32 +31,48 @@ def generate_table(data):
     return arr
 
 
+def sorted_table(data, revers=False, *key):
+    result = sorted(data, key=itemgetter(*key), reverse=revers)
+    return result
+
+
 def print_table(data):
-    head = "{0:<35}|{1:^6}|{2:^9}|{3:^7}|{4:^8}|{5:^9} |{6:^9} |".format(*list(map(lambda x: x.split(',')[0], data[0])))
+    names_column = list(map(lambda x: x.split(',')[0], data[0]))
+    head = "{0:<35}|{1:^6}|{2:^9}|{3:^7}|{4:^8}|{5:^9} |{6:^9} |".format(*names_column)
     print(head, "\n", "-" * len(head))
-    for i in data[1:]:
-        values = [v for k, v in i.items()]
-        print("{0:<35}|{1:^6.0f}|{2:>8.2f} |{3:>6} |{4:>7.1f} |{5:>9.1f} |{6:>9.1f} |".format(*values))
+    for row in data[1:]:
+        values = [v for k, v in row.items()]
+        print("{0:<35}|{1:^6.0f}|{2:>8.2f} |{3:>6} |{4:>7.1f} |{5:>9.1f} |{6:>9.1f} ".format(*values))
+
+
+def print_table_ticket(data):
+    names_column = list(map(lambda x: x.split(',')[0], data[0]))
+    head = "{0:<40}|{1:^6}|".format(*names_column)
+    print_title(head)
+    for row in data[1:]:
+        values = [v for k, v in row.items()]
+        print("{0:<40}|{1:^13.2f}|".format(*values))
+
+
+def print_title(string):
+    title = string
+    delimiter = '-' * len(string)
+    print(f"{title}\n{delimiter}")
 
 
 def calc_profit(data):
-    """ #1 - Добавление в вашу “таблицу” столбца “Прибыль”, которая равна разнице между сборами и бюджетом за каждый
-    фильм. """
     for row in list(data):
         row["Прибыль"] = (row["Сборы, \\$ млн"] - row["Бюджет, \\$ млн"])
         data.append(row)
-    print("TEST", data)
     return data
 
 
 def calc_sum_profit(data):
-    """ #2 - Расчет суммы значений в столбце """
     arr = list(map(lambda x: x["Прибыль"], list(data)))
     return sum(arr)
 
 
 def average_column(data):
-    """ #3 - Расчет среднего значения каждого столбца """
     keys = data[0].keys()
     average_list = dict.fromkeys(keys, 0.0)
     for i in list(data):
@@ -70,21 +87,34 @@ def average_column(data):
     return average_list
 
 
+def average_print(data):
+    for i in data:
+        if i != "Название":
+            if i == "Год":
+                print("{0:<18}{1:>7.0f}".format(str(i + ": "), data[i]))
+            else:
+                print("{0:<18}{1:>7.2f}".format(str(i + ": "), data[i]))
+
+
+def calc_ticket(data):
+    result = [{"Название": i["Название"], "Цена билета $": i["Сборы, \\$ млн"] / i["Бюджет, \\$ млн"]} for i in data]
+    return result
+
+
 with open(File.FILE_URL) as csv_file:
     reader = csv.DictReader(csv_file)
     moves = generate_table(list(reader))
 
-    table_profit = calc_profit(moves)
+    table_profit = sorted_table(calc_profit(moves), False, "Прибыль")
     print_table(table_profit)
 
     sum_profit = calc_sum_profit(table_profit)
-    print("\n\nСУММА ПРИБЫЛИ: {0: 6.2f}".format(sum_profit))
+    print("\n\n#4.1.2\nСУММА ПРИБЫЛИ: {0: 6.2f}".format(sum_profit))
 
     average = average_column(table_profit)
-    print(f"\n\nСРЕДНЕЕ ЗНАЧЕНИЕ\n{'-' * len(average)}")
-    for i in average:
-        if i != "Название":
-            if i == "Год":
-                print("{0:<18}{1:>7.0f}".format(str(i + ": "), average[i]))
-            else:
-                print("{0:<18}{1:>7.2f}".format(str(i + ": "), average[i]))
+    print_title("\n\n#4.2 - СРЕДНИЕ ЗНАЧЕНИЯ")
+    average_print(average)
+
+    print_title("\n\n#4.3 - Цена за каждый билет")
+    table_price_ticket = calc_ticket(moves)
+    print_table_ticket(table_price_ticket)
