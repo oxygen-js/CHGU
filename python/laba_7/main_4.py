@@ -39,7 +39,7 @@ def print_table(data):
 
 
 def calc_profit(data):
-    """#1 - Добавление в вашу “таблицу” столбца “Прибыль”, которая равна разнице между сборами и бюджетом за каждый
+    """ #1 - Добавление в вашу “таблицу” столбца “Прибыль”, которая равна разнице между сборами и бюджетом за каждый
     фильм. """
     for row in list(data):
         row["Прибыль"] = (row["Сборы, \\$ млн"] - row["Бюджет, \\$ млн"])
@@ -48,12 +48,26 @@ def calc_profit(data):
     return data
 
 
-def sum_column(data):
-    """#2 - Расчет суммы значений в столбце"""
-    for row in list(data):
-        row["Прибыль"] = (row["Сборы, \\$ млн"] - row["Бюджет, \\$ млн"])
-        data.append(row)
-    return data
+def calc_sum_profit(data):
+    """ #2 - Расчет суммы значений в столбце """
+    arr = list(map(lambda x: x["Прибыль"], list(data)))
+    return sum(arr)
+
+
+def average_column(data):
+    """ #3 - Расчет среднего значения каждого столбца """
+    keys = data[0].keys()
+    average_list = dict.fromkeys(keys, 0.0)
+    for i in list(data):
+        for k, v in i.items():
+            if k != "Название":
+                average_list[k] += v
+
+    for k, v in average_list.items():
+        if k != "Название":
+            average_list[k] = average_list[k] / len(data)
+
+    return average_list
 
 
 with open(File.FILE_URL) as csv_file:
@@ -62,3 +76,15 @@ with open(File.FILE_URL) as csv_file:
 
     table_profit = calc_profit(moves)
     print_table(table_profit)
+
+    sum_profit = calc_sum_profit(table_profit)
+    print("\n\nСУММА ПРИБЫЛИ: {0: 6.2f}".format(sum_profit))
+
+    average = average_column(table_profit)
+    print(f"\n\nСРЕДНЕЕ ЗНАЧЕНИЕ\n{'-' * len(average)}")
+    for i in average:
+        if i != "Название":
+            if i == "Год":
+                print("{0:<18}{1:>7.0f}".format(str(i + ": "), average[i]))
+            else:
+                print("{0:<18}{1:>7.2f}".format(str(i + ": "), average[i]))
