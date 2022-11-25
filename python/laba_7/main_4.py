@@ -41,8 +41,17 @@ def print_table(data):
     head = "{0:<35}|{1:^6}|{2:^9}|{3:^7}|{4:^8}|{5:^9} |{6:^9} |".format(*names_column)
     print(head, "\n", "-" * len(head))
     for row in data[1:]:
-        values = [v for k, v in row.items()]
+        values = [row[k] for k in row]
         print("{0:<35}|{1:^6.0f}|{2:>8.2f} |{3:>6} |{4:>7.1f} |{5:>9.1f} |{6:>9.1f} ".format(*values))
+
+
+def print_table_price_one_minute(data):
+    names_column = list(map(lambda x: x.split(',')[0], data[0]))
+    head = "{0:<35}|{1:^6}|{2:^9}|{3:^7}|{4:^8}|{5:^9} |{6:^9} |{7:^9}$ |".format(*names_column)
+    print(head, "\n", "-" * len(head))
+    for row in data[1:]:
+        values = [row[k] for k in row]
+        print("{0:<35}|{1:^6.0f}|{2:>8.2f} |{3:>6} |{4:>7.1f} |{5:>9.1f} |{6:>9.1f} |{7:>14.1f} |".format(*values))
 
 
 def print_table_ticket(data):
@@ -50,7 +59,7 @@ def print_table_ticket(data):
     head = "{0:<40}|{1:^6}|".format(*names_column)
     print_title(head)
     for row in data[1:]:
-        values = [v for k, v in row.items()]
+        values = [row[k] for k in row]
         print("{0:<40}|{1:^13.2f}|".format(*values))
 
 
@@ -63,6 +72,13 @@ def print_title(string):
 def calc_profit(data):
     for row in list(data):
         row["Прибыль"] = (row["Сборы, \\$ млн"] - row["Бюджет, \\$ млн"])
+        data.append(row)
+    return data
+
+
+def calc_price_one_min(data):
+    for row in list(data):
+        row["Стоим. 1 мин."] = (row["Сборы, \\$ млн"] / row["Длина, мин."])
         data.append(row)
     return data
 
@@ -118,3 +134,7 @@ with open(File.FILE_URL) as csv_file:
     print_title("\n\n#4.3 - Цена за каждый билет")
     table_price_ticket = calc_ticket(moves)
     print_table_ticket(table_price_ticket)
+
+    print_title("\n\n#4.4 - Стоимость 1 минуты")
+    table_price_min = sorted_table(calc_price_one_min(moves), True, "Стоим. 1 мин.")
+    print_table_price_one_minute(table_price_min)
