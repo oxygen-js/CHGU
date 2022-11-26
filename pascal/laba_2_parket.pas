@@ -53,7 +53,5 @@ begin
       y := y;
       x := -60;
      end;
-      
-   
    end;
 end.
