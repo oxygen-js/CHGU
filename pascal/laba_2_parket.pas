@@ -1,93 +1,59 @@
-﻿Program Cheburashka;
-uses GraphABC;
-
-
-procedure plitk(x1, y1, x2, y2: integer);
-//var u:real;
-//    i:byte;
-//    x1,y1:integer;
+﻿uses GraphABC;
+procedure plitk(x, y:integer; slant_right: boolean);
 begin
-
-  Line(60, 0, 0, 60);
-  Line(0, 60, 60, 120);
-  Line(60, 120, 120, 60);
-  Line(120, 60, 60, 0);
   
-//circle(x,y,3);
-//u:=0;
-//for i:=1 to 4 do
-// begin
-//  x1:=x+round(3*cos(u));
-//  y1:=y-round(3*sin(u));
-//  line(x1,y1,x1+round(r*cos(u-pi/8)),y1-round(r*sin(u-pi/8)));
-//  line(x1,y1,x1+round(r*cos(u-pi/8)),y1-round(r*sin(u-pi/8)));
-//  line(x1,y1,x1+round(r*cos(u+pi/8)),y1-round(r*sin(u+pi/8)));
-//  line(x1,y1,x1+round(r*cos(u+pi/8)),y1-round(r*sin(u+pi/8)));
-//  u:=u+pi/2;
-// end;
+  if slant_right then
+  begin
+    Line(x, y, x+60, y+60);
+    Line(x+60, y-60, x, y);
+    Line(x+60, y-60, x+120, y);
+    Line(x+60, y+60, x+120, y);
+  
+    Line(x+15, y+15, x+75, y-45);
+    Line(x+30, y+30, x+90, y-30);
+    Line(x+45, y+45, x+105, y-15);
+  end    
+  else
+  begin
+    Line(x, y-60, x+60, y);
+    Line(x+60, y, x+120, y-60);
+    
+    Line(x+75, y-15, x+15, y-75);
+    Line(x+90, y-30, x+30, y-90);
+    Line(x+105, y-45, x+45, y-105);
+  end;
+
 end;
 
+var x,y:integer; slant_right: boolean;
+begin
+  x := -60;
+  y := 0;
+  slant_right := True;
 
-
-Begin
-
-  plitk();
-
-
-End.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//procedure plitk(x,y:integer);
-//var u:real;
-//    i:byte;
-//    x1,y1:integer;
-//begin
-//circle(x,y,3);
-//u:=0;
-//for i:=1 to 4 do
-// begin
-//  x1:=x+round(3*cos(u));
-//  y1:=y-round(3*sin(u));
-//  line(x1,y1,x1+round(r*cos(u-pi/8)),y1-round(r*sin(u-pi/8)));
-//  line(x1,y1,x1+round(r*cos(u-pi/8)),y1-round(r*sin(u-pi/8)));
-//  line(x1,y1,x1+round(r*cos(u+pi/8)),y1-round(r*sin(u+pi/8)));
-//  line(x1,y1,x1+round(r*cos(u+pi/8)),y1-round(r*sin(u+pi/8)));
-//  u:=u+pi/2;
-// end;
-//end;
- 
- 
- //while y<=windowheight do
-// begin
-//  x:=r;
-//  while x<=windowwidth do
-//   begin
-//    plitk(x,y,r);
-//    x:=x+2*r;
-//   end;
-//  y:=y+2*r
-// end;
+  
+  while y <= windowheight do
+   begin
+   
+     while x <= windowwidth do
+     begin        
+      plitk(x, y, slant_right);
+      x := x+120;
+     end;
+     
+     if slant_right then
+     begin
+      slant_right := False;
+      y := y+120;
+      x := 0;
+     end
+     else
+     begin
+      slant_right := True;
+      y := y;
+      x := -60;
+     end;
+      
+   
+   end;
+end.
