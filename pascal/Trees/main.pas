@@ -1,61 +1,36 @@
 ﻿Const n = 9;
-  Connect: array[1..n, 1..n] of integer = 
-  (
-    (0,1,1,1,0,0,0,0,0),
-    (0,0,0,0,0,1,0,0,0),
-    (0,0,0,0,0,1,0,0,0),
-    (0,0,0,0,1,0,0,0,0),
-    (0,0,0,0,1,0,0,0,0),
-    (0,0,0,0,0,0,1,1,0),
-    (0,0,0,0,0,0,0,0,1),
-    (0,0,0,0,0,0,0,0,1),
-  );
-  
-  Type Data = Record
-    num: real;
-    k: integer;
-    d: array[1..n,n-1] of integer;
-  end;
+
+Type Data = Record
+  all, stage: integer;
+end;
   
 Var
-  Tree:array[1..n] of Data;
-  i, j, k : integer;
+  Tree: Data;
+  i: integer;
   
-Procedure Razdacha(p: integer);
-Var m: real;
-    i, n : integer
+Procedure calculateDay(day: integer);
 begin
-  m := Tree[p].num/Tree[p].k;
-  For i:=1 to Tree[p].k do begin
-    n:=Tree[p].d[i];
-    Tree[n].num := m;
-  end;
+  
 end;
   
 Begin 
-  Tree[1].num := 1;
+  Tree.all := 0;
+  Tree.stage := 0;
+    
+  For i := 1 to n do begin
+    Tree.stage := Tree.stage + i;
+    If i = 5 then
+      Writeln('Stage #1 - ', Tree.stage);
+    If i = 8 then
+      Writeln('Stage #2 - ', Tree.stage);
+    If i = 9 then
+      Writeln('Stage #3 - ', Tree.stage);
   
-  For i:=1 to n do begin
-    k := 0;
-    for j:= 1 to n do begin
-      if Connect[i, j] == 1 then begin
-        k:=k+1;
-        Tree[i].d[k] := j
-      end;
-    end;
-    Tree[i].k := k;
-  end;
-  
-  For k:=1 to n-1 do begin
-    For i:=1 to n do begin
-      If Tree[i].num <> 0 then begin
-        Razdacha(i);
-      end;
+    If (i = 5) or (i = 8) or (i = 9) then begin
+      Tree.all := Tree.all + Tree.stage;
+      Tree.stage := 0;
     end;
   end;
   
-  For i:=1 to n do begin
-    If Tree[i].k == 0 then Writeln(i, ' ', Tree[i].num);
-  end;
-  Writeln(Tree);
+  Writeln('All day - ', Tree.all);
 end.  
