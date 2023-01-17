@@ -1,0 +1,8 @@
+URL
+https://webinar13.chuvsu.ru/playback/presentation/2.3/1897b36655f13507c04cc6f0a6ab22a93a88fb8e-1631885700860?meetingId=1897b36655f13507c04cc6f0a6ab22a93a88fb8e-1631885700860
+
+
+11:00 - Код по записи из excel -> txt
+14:40 - Начало работы с Data.txt
+16:00 - Объяснение кода
+23:03 - Начало Второго этапа
