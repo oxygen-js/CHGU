@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿// Вариант #5. Подсчитать среднее арифметическое отрицательных элементов.
+#include <iostream>
 
 template <typename T1, typename T2, typename T3>
 void print(T1** arr, T2 S, T2 C, T3 num) {
