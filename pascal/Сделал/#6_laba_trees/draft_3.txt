@@ -1,0 +1,56 @@
+const n = 9;
+  Matrix: array[1..n, 1..n] of integer = 
+  ((0, 1, 1, 1, 0, 0, 0, 0, 0),          
+    (0, 0, 0, 0, 0, 1, 0, 0, 0),
+    (0, 0, 0, 0, 0, 1, 0, 0, 0),
+    (0, 0, 0, 0, 1, 0, 0, 0, 0),
+    (0, 0, 0, 0, 0, 1, 0, 0, 0),
+    (0, 0, 0, 0, 0, 0, 1, 1, 0),
+    (0, 0, 0, 0, 0, 0, 0, 0, 1),
+    (0, 0, 0, 0, 0, 0, 0, 0, 1),
+    (0, 0, 0, 0, 0, 0, 0, 0, 0));
+
+type Data = Record
+    day_stage: integer;
+end;
+
+var
+  Tree: array[1..3] of Data;
+  i, j, k, start_day, allDay, matrix_item: integer;
+
+begin  
+  // Вывести на экран даты завершения работ по всем этапам и общее число рабочих дней, необходимое для завершения всех работ по данному проекту.
+  start_day := 1;
+  Tree[start_day].day_stage := 1;
+  allDay := 0;
+  
+  for i := 1 to n do
+  begin
+    
+    if i = 6 then begin
+      start_day := start_day + 1;
+    end;
+    
+    if i = 8 then begin
+      start_day := start_day + 1;
+    end;
+    
+    for j := 1 to n do
+    begin
+      matrix_item := Matrix[i, j];
+      if matrix_item = 1 then begin
+        Tree[start_day].day_stage += j;
+        allDay := Tree[start_day].day_stage;
+      end;
+    end;
+    
+  end;
+  
+  for i := 1 to start_day do
+  begin
+    Writeln('Stage #', i, ' : ', Tree[i].day_stage);
+  end;
+  
+  Writeln(allDay);
+  
+end.  
