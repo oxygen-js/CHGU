@@ -7,9 +7,10 @@ Var i, dmBest: integer;
     
 
 Procedure Avto;
-var i, Sum: integer;
+var i, Sum, MaxVes: integer;
 begin
   Sum := 0;
+  MaxVes := MaxInt;
   for i := 1 to n do
     Sum := Sum + elem[i] * stack[i];
   
