@@ -1,0 +1,177 @@
+{Морской порт имеет M причалов. В него на загрузку/выгрузку заходят суда. Если 
+нет свободных причалов, то судно становится в очередь на загрузку. Поток судов 
+задан массивом следующего формата: 
+P=(Vi, Ti), 
+где Vi, Ti. – являются соответственно временем загрузки/выгрузки и временем 
+подхода i-ого судна к порту. Определить состояние очереди судов через время T0.} 
+{8.	Справочный зал имеет M терминалов. Поток пользователей равномерно распределен во времени. 
+Среднее количество пользователей равно P чел/сутки. Время работы одного пользователя на терминале 
+составляет в среднем t минут. Определить, среднее время ожидания. 
+(Например, m=5, p=140 чел/сутки, t=40 мин, Т0=24 часа).}
+ 
+type data = record 
+number, next, T_ochered: integer; 
+end; 
+ 
+const p = 6;//поток 
+//const M = 4;//количествo терминалов 
+const t = 60;//время работы одного пользователя 
+const T0 = 1440;//общее время 
+const kolvo_polz = T0 div p + 1;//количество пользовтелей, которое успеют обслужить за общее время 
+ 
+Var ochered: array [0..kolvo_polz] of data;//массив, в котором будут содержаться данные по каждому пользователю(его номер, какой номер будет на этом терминале после него, время стояния в очереди) 
+count: integer; 
+terminal_t1, terminal_t2, terminal_t3, terminal_t4: integer;//счетчик времени обслуживания на каждом из терминалов 
+tail: integer;//в переменной хранится номер пользователя, которое стоит в конце очереди 
+summa_T_ochered: integer;//общее время стояния в очереди 
+razmer_ocheredi: integer;// размер очереди в данное время 
+i, j: integer; 
+average_T_ochered: real;//среднее время стояния в очереди 
+terminal_1_free, terminal_2_free, terminal_3_free, terminal_4_free, k: boolean;//переменные, по которым можно будет узнать, свободен ли терминал 
+ 
+ 
+{добавление в очередь} 
+Procedure AddToOchered(var count:integer); 
+  begin 
+    ochered[count].number := count;//заполняем данные про пользователя 
+    ochered[count].next := 0; 
+    ochered[count].T_ochered := 0; 
+    if count <> 1 then 
+    ochered[count - 1].next := count+2
+    else  
+      ochered[count - 1].next := count;
+    tail := count; 
+  end; 
+ 
+ 
+{сдвиг очереди} 
+  Procedure SdvigOcheredi(); 
+  begin 
+    ochered[0].next += 1;//показывает, с каким номером пользователь в очереди после текущего 
+  end; 
+ 
+begin 
+  ochered[0].number := 0; 
+  ochered[0].next := 1; 
+  ochered[0].T_ochered := 0; 
+  tail := 0; 
+  terminal_1_free := True; terminal_2_free := True; terminal_3_free := True; terminal_4_free := True;
+  count := 0; 
+  k := False; 
+  summa_T_ochered := 0; 
+   
+  for i:=1 to T0 do begin 
+    if p > 1 then begin 
+     if i mod p = 1 then begin//через каждые p минут добавляем в очередь пользователя 
+      count += 1; 
+      k := True;//доп переменная указывает на то, что пришел новый пользователь 
+      AddToOchered(count); 
+    end; 
+    end 
+    else 
+      if p = 1 then begin 
+        count += 1; 
+      k := True;
+      AddToOchered(count); 
+      end; 
+    {если на каком-то из 4 терминалов пользователя обслужили полностью, то есть счетчик времени достиг времени обслуживания, то  
+    этот терминал становится свободным, а счетчик времени на нем обнуляется} 
+      if terminal_t1 = t then begin 
+        terminal_1_free := True; 
+        terminal_t1 := 0; 
+        end; 
+      if terminal_t2 = t then begin 
+        terminal_2_free := True; 
+        terminal_t2 := 0; 
+        end; 
+      if terminal_t3 = t then begin 
+        terminal_3_free := True; 
+        terminal_t3 := 0; 
+      end; 
+      if terminal_t4 = t then begin 
+        terminal_4_free := True; 
+        terminal_t4 := 0; 
+      end; 
+     
+    {Если какой-то из 4 терминалов занят, значит, на нем еще обслуживается пользователь, поэтому к счетчику времени на этом терминале добавляем +1} 
+    if terminal_1_free = False then   
+      terminal_t1 += 1; 
+    if terminal_2_free = False then   
+      terminal_t2 += 1; 
+    if terminal_3_free = False then   
+      terminal_t3 += 1; 
+    if terminal_4_free = False then   
+      terminal_t4 += 1; 
+     
+    {Если какой-то из 4 терминалов свободен и дополнительная логическая переменная равна истине(то есть пришел новый пользователь), то очередь сдвигается,  
+    пользователь занимает свободный терминал, и он становится занятым.
+    Счетчик времени равен 1, так как началось обслуживание. k становится равным Ложь,  
+    чтобы остальные терминалы тоже не сделать занятыми} 
+      if terminal_1_free and k then begin 
+        Sdvigocheredi; 
+        if razmer_ocheredi > 0 then 
+          razmer_ocheredi -= 1;//как только пользователь из очереди занимает свободный терминал, размер очереди уменьшается на 1 
+        terminal_1_free := False; 
+        terminal_t1 := 1; 
+        k:=False; 
+        end 
+      else 
+        if terminal_2_free and k then begin 
+        Sdvigocheredi; 
+        if razmer_ocheredi > 0 then 
+          razmer_ocheredi -= 1; 
+        terminal_2_free := False; 
+        terminal_t2 := 1; 
+        k:=False; 
+        end 
+      else  
+        if terminal_3_free and k then begin 
+        Sdvigocheredi; 
+        if razmer_ocheredi > 0 then 
+          razmer_ocheredi -= 1; 
+        terminal_3_free := False; 
+        terminal_t3 := 1; 
+        k:=False; 
+        end
+      else 
+        if terminal_4_free and k then begin 
+        Sdvigocheredi; 
+        if razmer_ocheredi > 0 then 
+          razmer_ocheredi -= 1; 
+        terminal_4_free := False; 
+        terminal_t4 := 1; 
+        k:=False; 
+        end; 
+        
+   
+  {считаем, сколько времени пользователь стоит в очереди} 
+  for j := ochered[0].next to tail do begin 
+    if ochered[j].T_ochered = 0 then 
+      razmer_ocheredi += 1; 
+    ochered[j].T_ochered += 1; 
+ 
+    end 
+  end; 
+   
+   
+  {после выхода из цикла for считаем общее время стояния в очереди всех пользователей} 
+  for j := 1 to tail do 
+    summa_T_ochered += ochered[j].T_ochered; 
+  
+   
+  {находим среднее время стояния в очереди. делим общее время стояния в очереди на количество пользователей} 
+  average_T_ochered := summa_T_ochered / (count - razmer_ocheredi); 
+   
+   
+  writeln('Общее время в очереди ', summa_T_ochered, ' минут'); 
+  writeln('Среднее время стояния в очереди ', average_T_ochered, ' минуты'); 
+  if razmer_ocheredi > 0 then begin 
+  write('Через ', T0, ' минут в очереди будут стоять ', razmer_ocheredi, ' пользователей c номерами '); 
+  for i:=razmer_ocheredi downto 1 do 
+    write(ochered[kolvo_polz - i].number, ' '); 
+  writeln; 
+  end 
+  else 
+    if razmer_ocheredi = 0 then  
+  write('Через ', T0, ' минут в очереди пользователей не будет'); 
+end.

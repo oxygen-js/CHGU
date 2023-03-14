@@ -1,0 +1,115 @@
+﻿Операци над массивами. Имеется массив, элементами которого являются целые числа.
+ Составить программу линейной сложности для удаления из массива дубликатов.
+(сделать линейное вычичление, чтобы t увеличивалось не в 4 раза(как сейчас), а в 2 только )
+//uses crt; 
+const n=20000; 
+type t=array[1..n] of integer; 
+var a,b:t; 
+    i,k,m,j,t1,t2:integer; 
+begin 
+//writeln('Исходный рандомный массив'); 
+randomize; 
+for i:=1 to n do begin 
+   a[i]:=random(n); 
+   //write(a[i]:3); 
+   end; 
+
+t1:=milliseconds;
+for i:=1 to n do begin 
+   m:=0; 
+   for j:=1 to k do 
+   if (a[i]=b[j]) then inc(m); //сч 
+   
+   if m=0 then begin // пч
+      inc(k); 
+      b[k]:=a[i]; 
+      end; 
+   end; 
+t2:=milliseconds;   
+writeln('t=',t2-t1);
+
+writeln; 
+//writeln('Изменённый массив'); 
+//for i:=1 to k do 
+//write(b[i]:3); 
+end.
+
+
+С++. Декартовы 15.5.2
+#include "math.h"
+    #include "iostream"
+    using namespace std;
+    
+//определяем структуру для декартовых координат
+struct DPoint{ 
+    double x, y;
+}; 
+ 
+//определяем структуру для полярных координат
+struct Ppoint{
+    double r, fi;
+};
+
+
+//функция для перевода координат
+DPoint P_to_D(Ppoint P) {
+    DPoint D;
+    D.x = P.r * cos(P.fi);  
+    D.y = P.r * sin(P.fi);
+    return D;
+}
+ 
+ 
+int main() {
+    setlocale(LC_ALL, "Russian");
+    DPoint D;
+    Ppoint P;
+    cout << "введите координаты" << endl;
+    cout << "обратите внимание: сначала вводится угол в радианах (цифрами), потом радиус" << endl;
+    cin >> P.fi >> P.r;
+    D = P_to_D(P);\\ вызывет вот фукцию сверху 
+    cout << "x = " << D.x << endl << "y = " << D.y;
+
+    return 0;
+}
+
+ПАСКАлЬ. МАССИВ 
+
+const N = 3;
+      M = 4;    
+var a: array[1..N,1..M] of real;// дв массив 
+  i,j,m1,minprokat: integer;   
+  min: real;
+begin
+    for i:=1 to N do 
+        for j:=1 to M do begin
+            A[i,j] := random(50);
+            a[i,3]:=10
+            
+        end;    
+        
+  writeln('цены на различные предметы: ');
+  for i:=1 to N do begin // выводится 
+    write('Прокат ',i,': ');
+    for j:=1 to M do
+        write(a[i,j]:10:1,' ');
+    writeln;
+end;
+
+  writeln('введите номер товара M');
+  readln(m1);
+  min := a[1,m1];// присваивает значение нужного товара
+  minprokat:=1;
+  for i:=1 to N do 
+    if a[i,m1]<min then 
+    begin
+      min := a[i,m1];
+      minprokat:=i;
+    end;
+    for i:= 1 to N do
+      if a[i,m1]=min then
+      begin
+   
+   writeln('номер прокатного пункта с наиболее низкой ценой за прокат: ',i,', с ценой ',min:0:1);     
+      end;
+end.

@@ -1,0 +1,273 @@
+{Вычислить сумму первых N членов следующего ряда ?_(k=1)^n?(k+4)?^(2*k)} 
+ 
+procedure Vir (var s1, s2 :string; var l :integer); //Выравнивание прибавлением нулей 
+  begin 
+     
+    var i, ls1, ls2 :integer; 
+     
+    ls1:= length(s1); 
+    ls2:= length(s2); 
+     
+    if (ls1 > ls2) then begin 
+       
+      l:= ls1; 
+      for i:=1 to l - ls2 do 
+        s2:= '0' + s2; 
+       
+    end 
+    else begin 
+       
+      l:= ls2; 
+      for i:=1 to l - ls1 do 
+        s1:= '0' + s1; 
+       
+    end; 
+     
+  end; 
+   
+   
+function P (a, b :string):string; //Сложение 
+  var x, x1, x2: integer; 
+  var i, k, l :integer; 
+  var s, c :string; 
+  var n :boolean; 
+   
+  begin 
+     
+    Vir(a,b,l); 
+    n:= false; 
+    s:= ''; 
+     
+    for i:=l downto 1 do begin 
+       
+      val(a[i],x1,k); 
+      val(b[i],x2,k); 
+      x:=x1+x2; 
+       
+      if n then x:=x+1; 
+      if x>9 then n:=true else n:=false; 
+      x:=x mod 10; 
+       
+      str(x,c); 
+      s:= c + s; 
+       
+    end; 
+     
+    if n then s:= '1' + s; 
+     
+    P:= s 
+     
+  end; 
+   
+   
+   
+function U (a :string; g :integer) :string; //Умножение 
+  var  c :string; 
+  var i :integer; 
+  
+  begin 
+     
+    c:= a; 
+     
+    for i:=1 to g-1 do begin 
+       
+      a:= P(a,c); 
+       
+    end; 
+     
+    U:= a 
+     
+  end; 
+   
+   
+function S (a :string; g :integer):string; //Степень 
+  var i, c, k :integer; 
+ 
+  begin 
+     
+    val(a, c, k); 
+     
+    for i:=1 to g-1 do begin 
+       
+      a:= U(a,c); 
+       
+    end; 
+     
+    S:= a 
+     
+  end; 
+ 
+ 
+ 
+ 
+begin 
+  var k, N, kb, s3 :integer; 
+  var s2, Su, F :string; 
+  var s4 :real; 
+     
+  write('N: ');readln(N); 
+   
+  str(N,F); 
+   
+  Su:='0'; 
+   
+   
+  for k:=1 to N do begin 
+     
+    str(k, s2); 
+    val(U(s2,2), s3, kb); 
+     
+    Su:= P(Su, S(P(s2,'4'),s3)); 
+     
+  end; 
+   
+    for k:=1 to N do begin 
+    s4:= s4 + power((k + 4),(2 * k)); 
+  end; 
+   
+  write(#10, 'Su: ', Su); 
+  write(#10, 's3: ', s4); 
+   
+end.
+
+
+МОЙ ВАРИАНТ :
+
+
+
+
+Procedure Equel(Var s1,s2:string;Var l:integer); 
+  Var i,l1,l2:integer; 
+  begin 
+   l1:=Length(s1); 
+   l2:=Length(s2); 
+   If l1>l2 then begin 
+   l:=l1; 
+   For i:=1 to l-l2 do s2:='0'+s2 
+   end 
+   else begin 
+   l:=l2; 
+   For i:=1 to l-l1 do s1:='0'+s1 
+   end 
+  end; 
+  // 
+  Function Plus(a,b:string):string; 
+  Var i,k,l:integer; 
+   x,x1,x2:integer; 
+   s,c:string; 
+   p:boolean; 
+  begin 
+   Equel(a,b,l); 
+   p:=False; 
+   s:=''; 
+   For i:=l Downto 1 do 
+   begin 
+   Val(a[i],x1,k); 
+   Val(b[i],x2,k); 
+   x:=x1+x2;If p then x:=x+1; 
+   If x>9 then p:=True else p:=False; 
+   x:=x mod 10; 
+   Str(x,c); 
+   s:=c+s 
+  end; 
+  If p then s:='1'+s; 
+  Plus:=s 
+  end; 
+  // 
+  Function Minus(a,b:string):string; 
+  Var i,k,l:integer; 
+   x,x1,x2:integer; 
+   s,c:string; 
+   p:boolean; 
+  begin 
+   Equel(a,b,l); 
+   p:=False; 
+   s:=''; 
+   For i:=l Downto 1 do 
+   begin 
+   Val(a[i],x1,k); 
+   Val(b[i],x2,k); 
+   If p then x1:=x1-1; 
+   If x1<x2 then begin x1:=x1+10;p:=True end 
+   else p:=False; 
+   x:=x1-x2; 
+   Str(x,c); 
+   s:=c+s 
+   end; 
+   While (s[1]='0') and (Length(s)>1) do Delete(s,1,1); 
+   Minus:=s 
+  end; 
+  // 
+  Function MultiOne(a:string;b:integer):string; 
+  Var i,j:integer; 
+   s,s1:string; 
+   x:integer; 
+  begin 
+   s:=''; 
+   For i:=Length(a) Downto 1 do begin 
+   x:=StrToInt(a[i]); 
+   x:=x*b; 
+   s1:=IntToStr(x); 
+   For j:=1 to (Length(a)-i) do s1:=s1+'0'; 
+   s:=Plus(s,s1) 
+   end; 
+   MultiOne:=s 
+  end; 
+  // 
+  Function Multi(a,b:string):string; 
+  Var i,j:integer; 
+   s1,s:string; 
+  begin 
+   s:=''; 
+   For i:=Length(b) Downto 1 do begin 
+   s1:=MultiOne(a,StrToInt(b[i])); 
+   For j:=1 to (Length(b)-i) do s1:=s1+'0'; 
+   s:=Plus(s,s1) 
+   end; 
+   Multi:=s 
+  end; 
+  
+  function Fact(N: string): string; 
+  var s,c: string; 
+  begin 
+  s := '1'; 
+  c := '0'; 
+  repeat 
+  c := Plus(c,'1'); 
+  s := Multi(s,c) 
+  until c = N; 
+   Fact := s; 
+  end; 
+  
+  function Step (a :string; g :integer):string; //Степень 
+  var i, c, k :integer; r:string;
+  begin 
+    val(a, c, k);
+    for i:=1 to g-1 do begin 
+      str(c,r);
+      a:= Multi(a,r); 
+    end; 
+    Step:= a 
+  end; 
+
+var Sum,p1,p2,p3:string;
+    k,n:string;
+    t1,t2:integer;
+begin
+   t1:=Milliseconds;
+  sum:='0';
+  k:='0';
+  write('N: ');readln(n);
+  While k<>n do begin
+    k:=Plus(k,'1');
+    p1:=Minus(k,'1');
+    p2:=Step(p1,3);
+    p3:=Fact(k);
+    p3:=Multi(p3,p2);
+    Sum:=Plus(Sum,p3);
+  
+  end;
+  writeln('Sum=',Sum);
+  t2:=Milliseconds;
+Writeln('t=', t2-t1);
+  end.

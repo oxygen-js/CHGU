@@ -1,0 +1,162 @@
+Program matr;
+const N1=10;
+type Matrice=array[1..N1,1..N1] of real;
+var
+        A:matrice;
+        I,J,N:integer;
+        D:real;//переменная детерминанта
+ 
+Function Det(A:Matrice;N:integer):real;
+var
+      B:matrice;
+      I:integer;
+      T,Mn,S:real;
+ 
+        function minor(var C:matrice;A:Matrice;N,I,J:integer):real;
+     var
+                Im,Jm,Ia,Ja,Nm:integer; 
+//Im - строки минора, Jm - столбцы минора, Ia - строки матрицы А, Ja - столбцы матрицы А, Nm - порядок (размерность) минора.
+        begin
+                Nm:=N-1; //порядок минора на единицу меньше порядка матрицы
+                Im:=1; 
+                Ia:=1;
+                while Im <= Nm do
+                        if Ia<>I then
+                        begin
+                              Jm:=1; Ja:=1;
+                                while Jm<=Nm  do
+                                        if Ja<>J then
+                                        begin
+                                                C[Im,Jm]:=A[Ia,Ja];    
+                                                Ja:=Ja+1; Jm:=Jm+1; //определяем какой элемент будет стоять перед минором
+                                        end
+                                else 
+                                        Ja:=Ja+1;
+                                Ia:=Ia+1; 
+                                Im:=Im+1;
+                        end
+                        else 
+                                Ia:=Ia+1;
+        end;
+ 
+begin
+        if N=1 then 
+                Det:=A[N,N]; //нашей функции передается число из массива
+        if N=2 then 
+                Det:=A[1,1]*A[2,2]-A[2,1]*A[1,2];
+        if N>2 then
+        begin
+                S:=0; //сумма
+                for I:=1 to N do
+                begin
+                        Mn:=Minor(B,A,N,I,1);//находим дополнительный минор
+                        if (I mod 2)=1 then //если после деления на 2 равно единице
+                        begin
+                                T:=Det(B,N-1); 
+                                S:=S+T*A[I,1];
+                        end
+                        else //если не равно выполняется
+                        begin
+                                T:=Det(B,N-1);
+                                S:=S-T*A[I,1];
+                        end;
+                end;
+                Det:=S;    
+        end;
+end; 
+ 
+begin
+        Write('Введите размер матрицы : '); 
+        readln(N);
+        for I:=1 to N do
+        begin
+                writeln('Введите эелементы строки',I:2);
+                for J:=1 to N do 
+                        readln(A[I,J]);
+        end;
+        D:=Det(A,N);//нахождение деттерминанта
+        Writeln('Определитель равен: ',D:7:4);
+        readln;
+end.
+
+Program Determinant;//название программы
+const N1=10;//константа (используется везде (не изменяется))
+type Matrice=array[1..N1,1..N1] of real;//свой тип массива
+var//глобальные переменные (способный измениться по ходу программы)
+        A:matrice;//переменная с нашим массивом
+        I,J,N:integer;//переменные для работы с массивом
+        D:real;//переменная для нахождения детерминанта
+ 
+Function Det(A:Matrice;N:integer):real;
+var
+        B:matrice;
+        I:integer;
+        T,Mn,S:real;
+ 
+        Function Minor(var C:matrice;A:Matrice;N,I,J:integer):real;
+//нахождение дополнительного минора
+        var
+                Im,Jm,Ia,Ja,Nm:integer; 
+//Im - строки минора, Jm - столбцы минора, Ia - строки матрицы А, Ja - столбцы матрицы А, Nm - порядок (размерность) минора.
+        begin
+                Nm:=N-1; //порядок минора на единицу меньше порядка матрицы
+                Im:=1; //берем первую строку
+                Ia:=1;
+                while Im<=Nm do
+                        if Ia<>I then
+                        begin
+                              Jm:=1; Ja:=1;
+                                while Jm<=Nm  do
+                                        if Ja<>J then
+                                        begin
+                                                C[Im,Jm]:=A[Ia,Ja];    
+                                                Ja:=Ja+1; Jm:=Jm+1; //определяем какой элемент будет стоять перед минором ?</font>
+                                        end
+                                else 
+                                        Ja:=Ja+1;
+                                Ia:=Ia+1; 
+                                Im:=Im+1;
+                        end
+                        else 
+                                Ia:=Ia+1;
+        end; {*Minor*}
+ 
+begin
+        if N=1 then //если  n=1
+                Det:=A[N,N]; //нашей функции передается число из массива
+        if N=2 then 
+                Det:=A[1,1]*A[2,2]-A[2,1]*A[1,2];//нашей функции передается число из массива
+        if N>2 then//всё что больше 2 
+        begin
+                S:=0; //сумма
+                for I:=1 to N do
+                begin
+                        Mn:=Minor(B,A,N,I,1);//находим дополнительный минор
+                        if (I mod 2)=1 then //если после деления на 2 равно единице
+                        begin
+                                T:=Det(B,N-1); 
+                                S:=S+T*A[I,1];
+                        end
+                        else //если не равно выполняется
+                        begin
+                                T:=Det(B,N-1);
+                                S:=S-T*A[I,1];
+                        end;
+                end;
+                Det:=S;    
+        end;
+end; {*Determ*}
+ 
+begin
+        Write('Vvedite porajdok matrichi N: '); 
+        readln(N);//ввод длины массива не больше 10
+        for I:=1 to N do
+        begin
+                writeln('Vvoditeelementu stroki ',I:2);
+                for J:=1 to N do //заполнение массива
+                        readln(A[I,J]);
+        end;
+        D:=Det(A,N);//нахождение деттерминанта
+        Writeln('Opredelitel raven: ',D:7:4);//вывод результата
+        readln;//пауза
+end.
