@@ -49,7 +49,7 @@ int laba_6_list()
 	int n;
 	std::cout << "N: "; std::cin >> n; std::cout << std::endl;
 
-	std::deque<int> lst, stage, result_lst;
+	std::list<int> lst, stage, result_lst;
 
 	for (int i = 0; i < n; i++) {
 		lst.push_back((rand() % 20 - rand() % 10));
