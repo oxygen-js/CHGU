@@ -4,9 +4,8 @@ org 100h              ;Программа начинается с адреса 100h
     mov cx,[n]
     mov ax,[k]
 metka:
-   mul ax
-   loop metka
-   mov [k],ax
+   ; Преобразование типов
+
 
 
     mov ax,4C00h      ;\

@@ -1,0 +1,8 @@
+﻿  laba_7.cpp
+  TaxiClass.cpp
+  Создание кода...
+functions.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl print_all(void)" (?print_all@@YAXXZ) в функции "void __cdecl call_task(enum MenuEnum *,int *)" (?call_task@@YAXPEAW4MenuEnum@@PEAH@Z).
+functions.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl add(void)" (?add@@YAXXZ) в функции "void __cdecl call_task(enum MenuEnum *,int *)" (?call_task@@YAXPEAW4MenuEnum@@PEAH@Z).
+functions.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl add_position(void)" (?add_position@@YAXXZ) в функции "void __cdecl call_task(enum MenuEnum *,int *)" (?call_task@@YAXPEAW4MenuEnum@@PEAH@Z).
+functions.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl pop_position(void)" (?pop_position@@YAXXZ) в функции "void __cdecl call_task(enum MenuEnum *,int *)" (?call_task@@YAXPEAW4MenuEnum@@PEAH@Z).
+C:\Users\Kazak\Desktop\codes\CH_GU\2 курс\[c++] ООП\OOP_2_sem_5_variant\laba_7\laba_7\x64\Debug\laba_7.exe : fatal error LNK1120: неразрешенных внешних элементов: 4

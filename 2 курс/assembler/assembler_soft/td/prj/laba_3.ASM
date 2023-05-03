@@ -9,7 +9,7 @@ org 100h              ;Программа начинается с адреса 100h
     add bx,dx  ;bx = 60
 
     imul cx,dx ;cx = 20
-    mov ax,bx  ;bx => ax
+    mov ax,bx  ;bx -> ax
     div cx     ;ax = ax / cx
     mov [k],ax
 
