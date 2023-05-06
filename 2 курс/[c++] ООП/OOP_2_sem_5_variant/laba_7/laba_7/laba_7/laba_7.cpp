@@ -12,12 +12,14 @@ int main()
     std::cout << "\n\t\t\t\t\t\tTASK OPTION #5" << std::endl;
 
     int code;
-    std::stack<TaxiClass, std::list<TaxiClass>> stask;
+    std::stack<TaxiClass, std::list<TaxiClass>> taxi_stack;
     MenuEnum selection = Menu;
 
     while (selection != Exit) {
         call_task(&selection, &code);
     }
+
+    taxi_stack.emplace(generate_all_taxi());
 
     return 0;
 }

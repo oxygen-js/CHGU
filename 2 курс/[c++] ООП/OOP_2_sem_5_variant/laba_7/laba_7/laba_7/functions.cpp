@@ -1,5 +1,9 @@
 #include <iostream>
+#include <list>
+#include <stack>
+#include <random>
 #include "functions.h"
+#include "TaxiClass.h"
 
 
 void print_menu(int* code, MenuEnum* selection)
@@ -12,7 +16,7 @@ void print_menu(int* code, MenuEnum* selection)
     std::cout << std::string(coutn_space, ' ') << "[4] DEL by index" << std::endl;
     std::cout << std::string(coutn_space, ' ') << "[5] Print on call" << std::endl;
     std::cout << std::string(coutn_space, ' ') << "[6] Print off call" << std::endl;
-    std::cout << std::string(coutn_space, ' ') << "[-1] EXIT" << std::endl;
+    std::cout << std::string(coutn_space, ' ') << "[q] EXIT" << std::endl;
     std::cout << "\nSelect menu: ";
     std::cin >> *code;
     switch (*code) {
@@ -45,6 +49,81 @@ void print_menu(int* code, MenuEnum* selection)
         break;
     }
     std::cout << std::endl;
+}
+
+std::string _get_brand_avto(int num) {
+    switch (num) {
+    case 1:
+        return "Lada - Vesta";
+    case 2:
+        return "Volvo - S60";
+    case 3:
+        return "Haval - H5";
+    case 4:
+        return "Audi - A8";
+    case 5:
+        return "BMW - X6";
+    case 6:
+        return "Mercedes - GLS";
+    case 7:
+        return "Volkswagen - Jetta";
+    case 8:
+        return "Bugati - Verone";
+    case 9:
+        return "Toyota - Cruse";
+    case 10:
+        return "Renault - logon";
+    default:
+        return "NONE_BRAND";
+    }
+}
+
+std::string _get_driver_avto(int num) {
+    switch (num) {
+    case 1:
+        return "Ivanov A.A.";
+    case 2:
+        return "Petrov G.G.";
+    case 3:
+        return "Aleksandrov A.A.";
+    case 4:
+        return "Kazakov A.Y.";
+    case 5:
+        return "Mokeev S.G.";
+    case 6:
+        return "Mongolov A.A.";
+    case 7:
+        return "Kulikova S.M.";
+    case 8:
+        return "Zondarev P.A.";
+    case 9:
+        return "Nikitin A.A.";
+    case 10:
+        return "Nikitin S.A.";
+    default:
+        return "Robot";
+    }
+}
+
+template<typename T>
+std::stack<T, std::list<T>> generate_all_taxi() {
+    std::stack<TaxiClass, std::list<TaxiClass>> taxi_stack;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dist(100, 999);
+    std::uniform_int_distribution<> dist_brand(1,10);
+
+    int number = dist(gen);
+    std::string brand = _get_brand_avto(dist_brand(gen));
+    std::string driver = _get_driver_avto(dist_brand(gen));
+    std::string address = "Chapaeva d." + (dist(gen));
+
+    for (int i = 0; i < 10; i++) {
+        TaxiClass obj = TaxiClass(number, brand, driver, address, true);
+        taxi_stack.push(obj);
+    }
+
+    return taxi_stack;
 }
 
 void print_all() {

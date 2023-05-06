@@ -9,11 +9,18 @@ class TaxiClass
 	
 public:
     int number;
-    std::string stamp;
+    std::string brand;
     std::string driver;
     std::string address;
     bool on_call;
-    TaxiClass(int number, std::string stamp, std::string driver, std::string address, bool on_call);
+    TaxiClass() {};
+    TaxiClass(int number, std::string brand, std::string driver, std::string address, bool on_call) {
+        this->number = number;
+        this->brand = brand;
+        this->driver = driver;
+        this->address = address;
+    }
+
 };
 
 #endif // !_TAXI_H_

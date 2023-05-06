@@ -6,6 +6,9 @@ enum MenuEnum { Menu, PrintAll, Add, AddPositon, PopItem, PrintOn, PrintOff, Bac
 
 void print_menu(int* code, MenuEnum* selection);
 
+template<typename T>
+std::stack<T, std::list<T>> generate_all_taxi();
+
 void print_all();
 void add();
 void add_position();
