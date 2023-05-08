@@ -1,0 +1,109 @@
+#include <iostream>
+#include <vector>
+
+class Detail {
+public:
+    Detail() {};
+    Detail(int number, Detail *next) 
+    {
+        this->number = number;
+        this->next = next;
+    };
+    int number;
+    Detail* next;
+};
+
+class Data_Control {
+public:
+    Data_Control() {};
+    Data_Control(bool free, int time) 
+    {
+        this->free = free;
+        this->time = time;
+    };
+    bool free;
+    int time;
+};
+
+void creat(Detail *f_product, Detail *l_product, int num)
+{
+    Detail obj;
+    if (f_product == nullptr)
+    {
+        f_product = new Detail(num, nullptr);
+        l_product = new Detail(num, nullptr);
+    }
+    else {
+        l_product->next = new Detail(num, nullptr);
+        l_product = new Detail(num, nullptr);
+    }
+}
+
+int count(Detail* f_product)
+{
+    int q = 0;
+    Detail* product = f_product->next;
+
+    while (product != nullptr)
+    {
+        q++;
+        product = f_product->next;
+    }
+
+    return q;
+}
+
+
+int main()
+{
+    const int t = 7;
+    const int p = 60;
+    const int V = 20;
+    const int T0 = 180;
+
+    int sum = 0;
+    int num = 0;
+    int count_controllers = 0;
+    std::cout << "Enter number controllers: ";
+    std::cin >> count_controllers;
+    std::cout << std::endl;
+
+    std::vector<Data_Control> Controller;
+    std::vector<Data_Control> Nacopitel;
+    Detail *F_product = nullptr;
+    Detail *L_product = nullptr;
+
+    for (int i = 0; i < count_controllers; i++)
+    {
+        Data_Control obj = Data_Control(false, 0);
+        Controller.push_back(obj);
+    }
+
+    for (int i = 0; i < T0; i++)
+    {
+        if (i % p == 0) {
+            num++;
+            creat(F_product, L_product, num);
+        }
+
+        if (count(F_product) > 0) {
+            for (int j = 0; j < count_controllers; j++)
+            {
+                if (!Controller[j].free) {
+                    Controller[j].free = true;
+                    Controller[j].time = t + 1;
+                    delete(F_product);
+                    break;
+                }
+            }
+        }
+    }
+
+
+    return 0;
+}
+/*
+
+7.	Контроль готовой продукции фирмы осуществляют M контролеров. Если изделие поступает на контроль, когда все контролеры заняты, то оно сбрасывается в накопитель. Изделия поступают со скоростью V изд./ч. и их поток равномерно распределен во времени. Среднее время на проверку одного изделия - t мин. Определить количество изделий в накопителе через время Т0. (V=20, t=7, T0=3 часа)
+
+*/
