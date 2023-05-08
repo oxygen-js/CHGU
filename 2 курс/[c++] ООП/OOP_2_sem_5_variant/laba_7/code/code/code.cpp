@@ -114,7 +114,7 @@ std::string _get_driver_avto(int num) {
 }
 
 void _print_all_number(std::list<TaxiClass> container) {
-    std::cout << "Все номера:";
+    std::cout << "Все номера:\n";
     for (const auto item : container) {
         std::cout << "Такси #: " << item.number << std::endl;
     }
@@ -129,7 +129,7 @@ void print_all(std::stack<TaxiClass, std::list<TaxiClass>> arr) {
                   << "\nМарка:\t" << item.brand
                   << "\nВодитель:\t" << item.driver
                   << "\nАдрес: " << item.address
-                  << "\nСтатус:\t" << (item.on_call ? "на вызова" : "свободно") 
+                  << "\nСтатус:\t" << (item.on_call ? "на вызове" : "свободно") 
         << std::endl << std::endl;
     }
 }
@@ -266,14 +266,12 @@ void set_on_call(std::stack<TaxiClass, std::list<TaxiClass>>* arr, bool val) {
             arr->pop();
         }
 
-        int i = 0;
         for (auto item : container) {
-            if (number == i) {
-                ++i;
-                continue;
+            if (number == item.number) {
+                item.on_call = val;
+                std::cout << "Такси #" << item.number << " " << (item.on_call ? "на вызове" : "свободно") << std::endl;
             }
             arr->push(item);
-            i++;
         }
 
         std::cout << "\nВыполнено!" << std::endl;
@@ -285,6 +283,16 @@ void set_on_call(std::stack<TaxiClass, std::list<TaxiClass>>* arr, bool val) {
 }
 
 void print_on_call(std::stack<TaxiClass, std::list<TaxiClass>>* arr, bool val) {
+    system("cls");
+    auto container = arr->_Get_container();
+
+    std::cout << "Список такси которые " << (val ? "на вызове" : "свободно") << ":" << std::endl;
+
+    for (auto item : container) {
+        if (item.on_call == val) {
+            std::cout << "Такси #" << item.number << std::endl;
+        }
+    }
 }
 
 void finish_command(MenuEnum* selection) {
