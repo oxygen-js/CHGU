@@ -4,33 +4,37 @@ const
   LEN = 100;
 
 var
-  n, S, slow, stack: integer;
-  arr: array[1..LEN] of integer;
+  max: integer;
+  arr: array of integer = (1,1,2,3,4,4,4,5,6,7,8,8,8,9,9,10,10,10,11);
 
 begin
-  Writeln('Генерация случайных целых чисел от 1 ДО: ');
-  Readln(n);
-  
-  Writeln('Начальный массив случайных целых чисел: ');
-  for var i := 1 to LEN do arr[i] := random(1, n);
-  for var i := 1 to LEN do write(arr[i], ' ');
-  
+  max := 0;
+  Writeln('Начальный массив: ');
+  for var i := 1 to arr.Length-1 do begin
+    if arr[i] > max then
+      max := arr[i];
+    write(arr[i], ' ');
+  end;
+
   Writeln(); Writeln();
   Writeln('Удаления дубликатов: ');
-  
-  slow := arr[1];
+        
   var j := 1;
-  while j < n do
+  for var i := 2 to arr.Length-1 do
   begin
-    stack := arr[slow];
-    if slow = 
-    arr[slow] := slow;
-    slow := stack;
-    j += 1;
+    if  arr[i] <> arr[j] then
+      j += 1;
+    arr[j] := arr[i];
   end;
   
-  for var i := 1 to LEN do 
+  
+  for var i := 1 to arr.Length-1 do 
   begin
+    if (arr[i] = max) then
+    begin
+      write(arr[i], ' ');
+      break;
+    end;
     write(arr[i], ' ');
   end;
   

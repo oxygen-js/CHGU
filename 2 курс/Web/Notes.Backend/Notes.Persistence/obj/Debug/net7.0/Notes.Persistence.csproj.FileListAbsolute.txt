@@ -1,0 +1,5 @@
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Persistence\obj\Debug\net7.0\Notes.Persistence.csproj.AssemblyReference.cache
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Persistence\obj\Debug\net7.0\Notes.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Persistence\obj\Debug\net7.0\Notes.Persistence.AssemblyInfoInputs.cache
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Persistence\obj\Debug\net7.0\Notes.Persistence.AssemblyInfo.cs
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Persistence\obj\Debug\net7.0\Notes.Persistence.csproj.CoreCompileInputs.cache

@@ -1,0 +1,12 @@
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\bin\Debug\net7.0\Notes.Domain.deps.json
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\bin\Debug\net7.0\Notes.Domain.dll
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\bin\Debug\net7.0\Notes.Domain.pdb
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.csproj.AssemblyReference.cache
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.AssemblyInfoInputs.cache
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.AssemblyInfo.cs
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.csproj.CoreCompileInputs.cache
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.dll
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\refint\Notes.Domain.dll
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\Notes.Domain.pdb
+D:\CH_GU\2 курс\Web\Notes.Backend\Notes.Domain\obj\Debug\net7.0\ref\Notes.Domain.dll
