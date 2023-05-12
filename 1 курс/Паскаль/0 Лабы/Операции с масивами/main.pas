@@ -1,41 +1,35 @@
 ﻿//7.	Имеется массив, элементами которого являются целые числа. Составить программу линейной сложности для удаления из массива дубликатов.
 
-const
-  LEN = 100;
-
 var
-  max: integer;
-  arr: array of integer = (1,1,2,3,4,4,4,5,6,7,8,8,8,9,9,10,10,10,11);
+  Len: integer;
+  arr, res: array of integer;
+  size: integer;
 
 begin
-  max := 0;
-  Writeln('Начальный массив: ');
-  for var i := 1 to arr.Length-1 do begin
-    if arr[i] > max then
-      max := arr[i];
-    write(arr[i], ' ');
-  end;
-
+  Writeln('Генерация случайных целых чисел от 1 ДО: ');
+  Readln(Len);
+  
+  size := Len - 1;
+  
+  arr := new integer[Len];
+  res := new integer[Len];
+  
+  Writeln('Начальный массив случайных целых чисел: ');
+  for var i := 0 to size do arr[i] := random(1, Len);
+  for var i := 0 to size do write(arr[i], ' ');
+  for var i := 0 to size do res[i] := 0;
+  
   Writeln(); Writeln();
   Writeln('Удаления дубликатов: ');
-        
-  var j := 1;
-  for var i := 2 to arr.Length-1 do
+  for var i := 0 to size do 
   begin
-    if  arr[i] <> arr[j] then
-      j += 1;
-    arr[j] := arr[i];
+    res[arr[i] - 1] += 1;
   end;
   
-  
-  for var i := 1 to arr.Length-1 do 
+  for var i := 0 to size do 
   begin
-    if (arr[i] = max) then
-    begin
-      write(arr[i], ' ');
-      break;
-    end;
-    write(arr[i], ' ');
+    if (res[i] <> 0) then
+      write(i, ' ');
   end;
   
 end.
