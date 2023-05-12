@@ -1,0 +1,6 @@
+﻿  code.cpp
+D:\CH_GU\2 курс\[c++] ООП\OOP_2_sem_5_variant\laba_7\code\code\code.cpp(155,35): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\CH_GU\2 курс\[c++] ООП\OOP_2_sem_5_variant\laba_7\code\code\code.cpp(194,35): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\CH_GU\2 курс\[c++] ООП\OOP_2_sem_5_variant\laba_7\code\code\code.cpp(230,35): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\CH_GU\2 курс\[c++] ООП\OOP_2_sem_5_variant\laba_7\code\code\code.cpp(264,35): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  code.vcxproj -> D:\CH_GU\2 курс\[c++] ООП\OOP_2_sem_5_variant\laba_7\code\x64\Debug\code.exe
