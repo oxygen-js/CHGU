@@ -1,5 +1,7 @@
 ﻿#include <iostream>
+#include <algorithm>
 #include <vector>
+#include <set>
 #include <random>
 
 using namespace std;
@@ -40,22 +42,27 @@ int main()
 
     cout << "\nГенерация случайных чисел...\n" << endl;
 
-    std::vector<int> vec_1;
-    std::vector<int> vec_2;
+    vector<int> vec_1;
+    vector<int> vec_2;
 
     fill(&vec_1, size_arr_1);
     fill(&vec_2, size_arr_2);
-    print_arr(vec_1);
-    print_arr(vec_2);
+
+
+    multiset<int, greater<int>> set1(vec_1.begin(), vec_1.end());
+    multiset<int, greater<int>> set2(vec_2.begin(), vec_2.end());
+
+    for (int x : vec_1) { set1.insert(x); }
+    for (int x : vec_2) { set2.insert(x); }
+
+    print_arr(set1);
+    print_arr(set2);
+
+    set_symmetric_difference(
+        set1.begin(), set1.end(),
+        set2.begin(), set2.end(),
+        ostream_iterator<int>(cout, " "), greater<int>{}
+    );
 
     return 0;
 }
-
-/*
-Даны векторы V1 и V2 с различным количеством элементов. 
-
-Найти все числа (с учетом повторений), которые входят в один из исходных векторов и отсутствуют в другом, и вывести их в порядке убывания; при этом если,
-например, некоторое число входит в один из векторов 3 раза, а в другой 5 раз, то его надо вывести 2 раза. Использовать алгоритм set_symmetric_difference для
-двух вспомогательных мультимножеств и итератора ptout_iterator. Чтобы обеспечить вывод чисел в нужном порядке, при создании множеств и в алгоритме
-использовать функциональный объект greater.
-*/
