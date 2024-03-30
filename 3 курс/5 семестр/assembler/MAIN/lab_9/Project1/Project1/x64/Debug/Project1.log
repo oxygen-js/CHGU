@@ -1,0 +1,72 @@
+﻿  Project1.cpp
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(42,5): error C4235: использовано нестандартное расширение: ключевое слово "__asm" данной архитектурой не поддерживается
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(43,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(43,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "eal"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(43,13): error C2065: eal: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(44,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mul"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(44,9): error C2065: mul: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(44,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "eal"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(44,13): error C2065: eal: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(45,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(45,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(45,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "d"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(45,13): error C2065: d: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(45,16): error C2065: eax: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(46,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(46,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(46,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "eax"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(46,13): error C2065: eax: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(47,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(47,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(47,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "eal"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(47,13): error C2065: eal: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(48,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(48,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(48,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebl"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(48,13): error C2065: ebl: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(49,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mul"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(49,9): error C2065: mul: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(49,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebl"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(49,13): error C2065: ebl: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(50,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(50,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(50,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebx"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(50,13): error C2065: ebx: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(51,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mol"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(51,9): error C2065: mol: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(51,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebl"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(51,13): error C2065: ebl: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(52,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(52,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(52,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebx"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(52,13): error C2065: ebx: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(52,18): error C2065: d: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(53,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "sub"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(53,9): error C2065: sub: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(53,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebx"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(53,13): error C2065: ebx: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(53,18): error C2065: eax: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(54,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "cmp"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(54,9): error C2065: cmp: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(54,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "ebx"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(54,13): error C2065: ebx: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(55,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "je"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(55,9): error C2065: je: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(55,12): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "exit"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(56,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(55,12): warning C4551: в вызове функции отсутствует список аргументов
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(56,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(56,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "k"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(57,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "jq"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(57,9): error C2065: jq: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(57,12): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "exit"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(58,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "mov"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(57,12): warning C4551: в вызове функции отсутствует список аргументов
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(58,9): error C2065: mov: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(58,13): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "k"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(59,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "jl"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(59,9): error C2065: jl: необъявленный идентификатор
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(59,12): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "exit"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(61,9): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "exit"
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(59,12): warning C4551: в вызове функции отсутствует список аргументов
+C:\Users\user\Documents\CHGU\assembler\lab_1\Project1\Project1\Project1.cpp(62,5): error C2059: синтаксическая ошибка: }

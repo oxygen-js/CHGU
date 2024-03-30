@@ -1,0 +1,2 @@
+E:\assembler\td\prj\vsprj\9\vstavka\Debug\vstavka.exe
+E:\assembler\td\prj\vsprj\9\vstavka\Debug\vstavka.pdb

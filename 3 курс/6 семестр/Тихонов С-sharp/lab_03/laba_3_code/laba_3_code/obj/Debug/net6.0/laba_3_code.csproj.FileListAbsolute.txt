@@ -1,0 +1,14 @@
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\bin\Debug\net6.0\laba_3_code.exe
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\bin\Debug\net6.0\laba_3_code.deps.json
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\bin\Debug\net6.0\laba_3_code.runtimeconfig.json
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\bin\Debug\net6.0\laba_3_code.dll
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\bin\Debug\net6.0\laba_3_code.pdb
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\laba_3_code.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\laba_3_code.AssemblyInfoInputs.cache
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\laba_3_code.AssemblyInfo.cs
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\laba_3_code.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\laba_3_code.dll
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\refint\laba_3_code.dll
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\laba_3_code.pdb
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\laba_3_code.genruntimeconfig.cache
+C:\Users\user\Documents\CHGU\Тихонов С-sharp\lab_3\laba_3_code\laba_3_code\obj\Debug\net6.0\ref\laba_3_code.dll

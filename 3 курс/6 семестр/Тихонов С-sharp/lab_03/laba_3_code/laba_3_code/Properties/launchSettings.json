@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "laba_3_code": {
+      "commandName": "Project",
+      "commandLineArgs": "4 4"
+    }
+  }
+}
