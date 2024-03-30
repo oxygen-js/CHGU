@@ -1,62 +1,88 @@
-﻿Bird Eagle = new Bird("Eagle", 5.5, 4.1, true);
-Bird Crow = new Bird("Crow", 2.5, 2.8, true);
-Bird Chicken = new Bird("Chicken", 1.5, 4.8, false);
+﻿Bird defaultBird = new Bird();
+Bird eagle = new Bird("Eagle", 5.5, 4.1, true);
+Bird crow = new Bird("Crow", 2.5, 2.8, true);
+Bird chicken = new Bird("Chicken", 1.5, 4.8, false);
 
-Eagle.printInfo();
-Crow.printInfo();
-Chicken.printInfo();
+defaultBird.PrintInfo();
+eagle.PrintInfo();
+crow.PrintInfo();
+chicken.PrintInfo();
 
+chicken.Predator = true;
+chicken.PrintInfo();
+
+Bird eagleChiken = eagle + chicken;
+eagleChiken.PrintInfo();
+
+Console.WriteLine($"{eagle.Species} > {chicken.Species} = {eagle > chicken}");
+Console.WriteLine($"{eagle.Species} < {chicken.Species} = {eagle < chicken}");
 
 class Bird
 {
-  public string species;    // Вид
-  public double age;        // Возраст
-  public double weight;     // Вес
+  public string Species;    // Вид
+  public double Age;        // Возраст
+  public double Weight;     // Вес
   
-  private bool predator;    // Хищник
-  private string diet;      // Рацион питания 
+  private bool _predator;    // Хищник
+  private string _diet;      // Рацион питания 
 
-  public bool Predator 
+  public bool Predator
   {
-    get { return predator; }
-
+    get => _predator;
     set
     {
-      predator = value;
-      diet = (value ? "meat" : "greenery");
+      _predator = value;
+      _diet = (value ? "meat" : "greenery");
     }
   }
 
   public Bird()
   {
-    species = "Default bird";
-    age = 0;
-    weight = 0;
-    predator = false;
-    diet = "greenery";
+    Species = "Default bird";
+    Age = 0;
+    Weight = 0;
+    _predator = false;
+    _diet = "greenery";
   }
 
   public Bird(string species, double age, double weight, bool predator)
   {
-    this.species = species;
-    this.age = age;
-    this.weight = weight;
+    Species = species;
+    Age = age;
+    Weight = weight;
     Predator = predator;
   }
 
-  public void printInfo()
+  public void PrintInfo()
   {
-    Console.SetCursorPosition((Console.WindowWidth - species.Length) / 2, Console.CursorTop);
-    Console.WriteLine($"*** {species.ToUpper()} ***");
+    Console.SetCursorPosition((Console.WindowWidth - Species.Length) / 2, Console.CursorTop);
+    Console.WriteLine($"*** {Species.ToUpper()} ***");
     
-    Console.WriteLine($"Публичные свойства:");
-    Console.WriteLine($"Возраст: {age}");
-    Console.WriteLine($"Вес: {weight}");
+    Console.WriteLine("Публичные свойства");
+    Console.WriteLine($"\t- Возраст: {Age}");
+    Console.WriteLine($"\t- Вес: {Weight}");
     
-    Console.WriteLine($"\nПриватные свойства:");
-    Console.WriteLine($"Хищник: {predator}");
-    Console.WriteLine($"Рацион питания: {diet}");
+    Console.WriteLine("");
+    
+    Console.WriteLine("Приватные свойства");
+    Console.WriteLine($"\t- Хищник: {_predator}");
+    Console.WriteLine($"\t- Рацион питания: {_diet}");
 
-    Console.WriteLine("\n\n");
+    Console.WriteLine("\n");
+  }
+  
+  public static Bird operator + (Bird bird1, Bird bird2)
+  {
+    return new Bird(bird1.Species + " " + bird2.Species, 0.1, bird1.Weight + bird2.Weight, bird1.Predator);
+  }
+
+  public static bool operator > (Bird bird1, Bird bird2)
+  {
+    return bird1.Age > bird2.Age;
+  }
+  
+  public static bool operator < (Bird bird1, Bird bird2)
+  {
+    return bird1.Age < bird2.Age;
   }
 }

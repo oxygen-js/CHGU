@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ePY3C/T6iFBtIY6ManAv8GlXk8O2nd9FtuPrVvVhHFGxk7bin9EWFqG3EjvlkttC6FG/SRMA1r/Rh3yD0itqWQ==",
+  "dgSpecHash": "khYaCkW+m91RTXuqTIrHgkyci1LprRiuxcw1gmk6hIUpZ8+r8RGTrsME7YsGR9uyPxkx5fgMWplgjZq3AGkLmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Documents\\CHGU\\CHGU\\3 курс\\6 семестр\\Тихонов С-sharp\\lab_05\\laba_05\\laba_05.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\89170\\Documents\\CHGU\\3 курс\\6 семестр\\Тихонов С-sharp\\lab_05\\laba_05\\laba_05.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.28\\microsoft.netcore.app.host.win-x64.6.0.28.nupkg.sha512"
+  ],
   "logs": []
 }
