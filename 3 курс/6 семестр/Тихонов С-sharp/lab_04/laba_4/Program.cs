@@ -1,6 +1,19 @@
 ﻿Menu menuValue = Menu.HOME;
 List<Footballer> footballers = new List<Footballer> { };
 
+
+Footballer footballerAndrey = new("Andrey Ivanov", "Barsa", 10, 1);
+Footballer footballerSergey = new("Sergey Petrov", "Spartak", 10, 5);
+Footballer footballerTarik = new("Tarik Elphahli", "CSK", 10, 1);
+Footballer footballerKazakov = new("Andrey Kazakov", "Barsa", 20, 8);
+Footballer footballerIvan = new("Ivan Ivanov", "CSK", 24, 10);
+
+footballers.Add(footballerAndrey);
+footballers.Add(footballerSergey);
+footballers.Add(footballerTarik);
+footballers.Add(footballerKazakov);
+footballers.Add(footballerIvan);
+
 do
 {
     switch(menuValue)
@@ -164,7 +177,7 @@ struct Footballer
 
     public double getAverageGames()
     {
-      return countGames / yellowCard;
+      return (double)countGames / (double)yellowCard;
     }
 
     public static void statistics(List<Footballer> footballers)

@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\CHGU\\CHGU\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0422\u0438\u0445\u043E\u043D\u043E\u0432 \u0421-sharp\\lab_05\\",
+  "WorkspaceRootPath": "C:\\Users\\89170\\Documents\\CHGU\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0422\u0438\u0445\u043E\u043D\u043E\u0432 \u0421-sharp\\lab_05\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C5C264E-2C38-4633-8099-9BB2A59B05A6}|laba_05\\laba_05.csproj|c:\\users\\user\\documents\\chgu\\chgu\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0442\u0438\u0445\u043E\u043D\u043E\u0432 \u0441-sharp\\lab_05\\laba_05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C5C264E-2C38-4633-8099-9BB2A59B05A6}|laba_05\\laba_05.csproj|c:\\users\\89170\\documents\\chgu\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0442\u0438\u0445\u043E\u043D\u043E\u0432 \u0441-sharp\\lab_05\\laba_05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C5C264E-2C38-4633-8099-9BB2A59B05A6}|laba_05\\laba_05.csproj|solutionrelative:laba_05\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\CHGU\\CHGU\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0422\u0438\u0445\u043E\u043D\u043E\u0432 \u0421-sharp\\lab_05\\laba_05\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\89170\\Documents\\CHGU\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0422\u0438\u0445\u043E\u043D\u043E\u0432 \u0421-sharp\\lab_05\\laba_05\\Program.cs",
               "RelativeDocumentMoniker": "laba_05\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\CHGU\\CHGU\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0422\u0438\u0445\u043E\u043D\u043E\u0432 \u0421-sharp\\lab_05\\laba_05\\Program.cs",
+              "ToolTip": "C:\\Users\\89170\\Documents\\CHGU\\3 \u043A\u0443\u0440\u0441\\6 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0422\u0438\u0445\u043E\u043D\u043E\u0432 \u0421-sharp\\lab_05\\laba_05\\Program.cs",
               "RelativeToolTip": "laba_05\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-30T08:33:44.518Z",
               "EditorCaption": ""

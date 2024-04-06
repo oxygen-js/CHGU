@@ -1,3 +1,5 @@
 .vscode/*
 .idea/*
 c++/.vs
+.vs/*
+.vs

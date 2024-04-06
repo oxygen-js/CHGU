@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "xKIhgS38ottv8MwtskmSdXzzY65omUiNgioksGlHbvOb1VIvRa8dNOoOjiS2u3HlgCcUwN+5Nt9otyvEZWJYRw==",
+  "dgSpecHash": "Zsixi2/BbM8WRs6kYZV+4/lNlLQQxTSHz+4eBswzl1VXdPcjfEWOh/tBuSd3qpm99htPgkJ9NgOqnl6YP85GRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Documents\\CHGU\\Тихонов С-sharp\\laba_4\\laba_4\\laba_4.csproj",
+  "projectFilePath": "C:\\Users\\89170\\Documents\\CHGU\\3 курс\\6 семестр\\Тихонов С-sharp\\lab_04\\laba_4\\laba_4.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.16\\microsoft.netcore.app.host.win-x64.7.0.16.nupkg.sha512"
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\89170\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }
