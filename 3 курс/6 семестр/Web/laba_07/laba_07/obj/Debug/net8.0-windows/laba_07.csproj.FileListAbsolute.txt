@@ -1,0 +1,16 @@
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\bin\Debug\net8.0-windows\laba_07.exe
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\bin\Debug\net8.0-windows\laba_07.deps.json
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\bin\Debug\net8.0-windows\laba_07.runtimeconfig.json
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\bin\Debug\net8.0-windows\laba_07.dll
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\bin\Debug\net8.0-windows\laba_07.pdb
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.Form1.resources
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.csproj.GenerateResource.cache
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.AssemblyInfoInputs.cache
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.AssemblyInfo.cs
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.dll
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\refint\laba_07.dll
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.pdb
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\laba_07.genruntimeconfig.cache
+C:\Users\User\Documents\chgu\web\laba_07\laba_07\obj\Debug\net8.0-windows\ref\laba_07.dll
