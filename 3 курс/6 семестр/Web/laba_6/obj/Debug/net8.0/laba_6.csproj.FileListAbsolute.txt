@@ -1,0 +1,14 @@
+/home/andruxa/chgu/laba_6/laba_6/bin/Debug/net8.0/laba_6
+/home/andruxa/chgu/laba_6/laba_6/bin/Debug/net8.0/laba_6.deps.json
+/home/andruxa/chgu/laba_6/laba_6/bin/Debug/net8.0/laba_6.runtimeconfig.json
+/home/andruxa/chgu/laba_6/laba_6/bin/Debug/net8.0/laba_6.dll
+/home/andruxa/chgu/laba_6/laba_6/bin/Debug/net8.0/laba_6.pdb
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/laba_6.GeneratedMSBuildEditorConfig.editorconfig
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/laba_6.AssemblyInfoInputs.cache
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/laba_6.AssemblyInfo.cs
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/laba_6.csproj.CoreCompileInputs.cache
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/laba_6.dll
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/refint/laba_6.dll
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/laba_6.pdb
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/laba_6.genruntimeconfig.cache
+/home/andruxa/chgu/laba_6/laba_6/obj/Debug/net8.0/ref/laba_6.dll
